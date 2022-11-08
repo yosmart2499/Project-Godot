@@ -1,11 +1,9 @@
 extends Node
 
-var temp_repo;
+var temp_repo: OrthographyRepository = OrthographyRepository.new();
 var file_path: String = "user://data.save";
 
 func _ready():
-	if(SaveLoading.load_from_file(file_path) == null):
-		temp_repo = OrthographyRepository.new();
 	for i in range(10):
 		var item: GraphemeItem = GraphemeItem.new(String(i), String(i % 2));
 		temp_repo.repo_add_item(item);

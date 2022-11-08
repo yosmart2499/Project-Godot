@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Modules/UI/TimerText.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../TimerLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Test" ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "timer"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../TimerLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "3", "2", "1" ]
+}
+
+[node name="TimerText" type="Control" groups=["timers"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="TimerCountdown" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+text = "Test"
+uppercase = true
+
+[node name="TimerAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../TimerCountdown")
+autoplay = "timer"
+anims/RESET = SubResource( 3 )
+anims/timer = SubResource( 2 )
+
+[connection signal="timeout" from="TimerCountdown" to="." method="_on_TimerCountdown_timeout"]

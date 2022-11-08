@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprite/survivor-idle_rifle_0.png" type="Texture" id=1]
+[ext_resource path="res://Script/Sniper.gd" type="Script" id=2]
+[ext_resource path="res://Scene/Bullet.tscn" type="PackedScene" id=3]
+
+[node name="Sniper" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+bullet_scene = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )

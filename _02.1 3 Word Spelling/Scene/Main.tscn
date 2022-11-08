@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scene/4LetterDragSystem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/MouseController.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="4LetterDragSystem" parent="." instance=ExtResource( 2 )]
+
+[node name="MouseController" parent="." instance=ExtResource( 3 )]
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="MousePathLine" type="Line2D" parent="."]
+width = 5.0
+default_color = Color( 0, 0, 0, 1 )
+
+[connection signal="word_confirmned" from="4LetterDragSystem" to="." method="_on_4LetterDragSystem_word_confirmned"]
+[connection signal="mouse_position" from="MouseController" to="." method="_on_MouseController_mouse_position"]
+[connection signal="mouse_reset" from="MouseController" to="." method="_on_MouseController_mouse_reset"]
+[connection signal="mouse_reset" from="MouseController" to="4LetterDragSystem" method="_on_MouseController_mouse_reset"]

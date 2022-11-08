@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game File/LetterNWord File/LetterNWordContainer.gd" type="Script" id=1]
+
+[node name="LetterNWordContainer" type="Node"]
+script = ExtResource( 1 )
+letter_property_json_path = "res://JSON File/letterNproperty.json"

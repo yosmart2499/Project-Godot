@@ -1,0 +1,76 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Label",
+"class": "DisplayLabel",
+"language": "GDScript",
+"path": "res://Script/DisplayWord.gd"
+}, {
+"base": "TouchScreenButton",
+"class": "DragScreenWordSystem",
+"language": "GDScript",
+"path": "res://Script/Control.gd"
+}, {
+"base": "Line2D",
+"class": "DrawMousePath",
+"language": "GDScript",
+"path": "res://Script/DrawMousePath.gd"
+}, {
+"base": "Button",
+"class": "SelectedLevel",
+"language": "GDScript",
+"path": "res://Script/LevelSelect.gd"
+}, {
+"base": "Node",
+"class": "VocabContainers",
+"language": "GDScript",
+"path": "res://Script/VocabularyContainers.gd"
+}, {
+"base": "Label",
+"class": "VocabLabel",
+"language": "GDScript",
+"path": "res://Script/VocabLabel.gd"
+} ]
+_global_script_class_icons={
+"DisplayLabel": "",
+"DragScreenWordSystem": "",
+"DrawMousePath": "",
+"SelectedLevel": "",
+"VocabContainers": "",
+"VocabLabel": ""
+}
+
+[application]
+
+config/name="_02.2 [Remake 2] Drag Word - Kerja Praktik"
+run/main_scene="res://Main.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

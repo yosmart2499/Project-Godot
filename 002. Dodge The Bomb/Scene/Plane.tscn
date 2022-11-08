@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Img/airplane-pixel-art-set-jet-plane-front-side-view-8-bit-sprite_418367-291_preview_rev_1 (2).png" type="Texture" id=1]
+[ext_resource path="res://Script/Plane.gd" type="Script" id=2]
+[ext_resource path="res://Scene/Bomb.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.0
+height = 100.0
+
+[node name="Plane" type="RigidBody2D" groups=["planeNbomb"]]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+bomb_scene = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="DropTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="DropPoint" type="Position2D" parent="."]
+position = Vector2( 0, 20 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
+rotation = 1.5708
+shape = SubResource( 1 )
+disabled = true
+
+[node name="ExitTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="DropTimer" to="." method="_on_DropTimer_timeout"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="timeout" from="ExitTimer" to="." method="_on_ExitTimer_timeout"]

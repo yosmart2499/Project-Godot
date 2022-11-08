@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Hierarchy Game File/Display Control File/DisplayControl.gd" type="Script" id=2]
+[ext_resource path="res://Hierarchy Game File/Phrase Button File/PhraseButton.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="DisplayControl" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+phrase_button_scene = ExtResource( 3 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+custom_constants/vseparation = 30
+custom_constants/hseparation = 30
+columns = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 384.0
+margin_top = 268.0
+margin_right = 639.0
+margin_bottom = 332.0
+custom_constants/separation = 30
+
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/HBoxContainer"]
+margin_right = 29.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="DisplayButton" type="Button" parent="CenterContainer/HBoxContainer"]
+margin_left = 59.0
+margin_right = 255.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 1 )
+text = "Display"
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer/DisplayButton" to="." method="_on_DisplayButton_pressed"]

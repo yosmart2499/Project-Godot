@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Modules/Record And Play Audio File/SpellingSoundHandler.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="AudioStreamMicrophone" id=2]
+
+[node name="SpellingSoundHBoxContainer" type="HBoxContainer"]
+margin_right = 315.0
+margin_bottom = 64.0
+script = ExtResource( 2 )
+
+[node name="RecordButton" type="Button" parent="."]
+margin_right = 189.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( -290, -19 )
+custom_fonts/font = SubResource( 1 )
+text = "Record"
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 193.0
+margin_right = 223.0
+margin_bottom = 64.0
+custom_constants/separation = 30
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 227.0
+margin_right = 349.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( -290, -19 )
+custom_fonts/font = SubResource( 1 )
+text = "Play"
+
+[node name="SpellingAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SpellingAudioStreamRecord" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 2 )
+autoplay = true
+bus = "Record"
+
+[connection signal="pressed" from="RecordButton" to="." method="_on_RecordButton_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/4WordDragSystem.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Letter.tscn" type="PackedScene" id=2]
+
+[node name="4LetterDragSystem" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+letter_scene = ExtResource( 2 )
+
+[node name="LetterHolder" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = -96.0
+margin_right = 96.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 192, 192 )
+mouse_filter = 2
+color = Color( 1, 1, 1, 0.462745 )

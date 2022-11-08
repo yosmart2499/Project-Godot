@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CylinderMesh" id=1]
+
+[node name="1_Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.0860095, -0.182956, 0.979352, -0.0160061, 0.983121, 0.182255, -0.996166, 0, -0.0874861, 4.02347, 1.23087, 0 )

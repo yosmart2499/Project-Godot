@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Hierarchy Game File/Upload Image File/WordImageHBoxContainer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Hierarchy Game File/Typing Controller/TypingControl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hierarchy Game File/Record And Play Audio File/SpellingSoundHBoxContainer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Hierarchy Game File/Input UI File/InputUI.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 1 )
+
+[node name="InputUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="SubmittedPhraseConfirmationDialog" type="ConfirmationDialog" parent="."]
+margin_top = 541.0
+margin_right = 1024.0
+margin_bottom = 611.0
+popup_exclusive = true
+
+[node name="InputVBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -235.0
+margin_bottom = 235.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="InputVBoxContainer"]
+margin_top = 11.0
+margin_right = 1024.0
+margin_bottom = 15.0
+
+[node name="PropertyHBoxContainer" type="HBoxContainer" parent="InputVBoxContainer"]
+margin_top = 55.0
+margin_right = 1024.0
+margin_bottom = 183.0
+custom_constants/separation = 120
+alignment = 1
+
+[node name="SpellingSoundHBoxContainer" parent="InputVBoxContainer/PropertyHBoxContainer" instance=ExtResource( 4 )]
+margin_left = 39.0
+margin_right = 388.0
+margin_bottom = 128.0
+
+[node name="VSeparator" type="VSeparator" parent="InputVBoxContainer/PropertyHBoxContainer"]
+margin_left = 508.0
+margin_right = 512.0
+margin_bottom = 128.0
+
+[node name="WordImageHBoxContainer" parent="InputVBoxContainer/PropertyHBoxContainer" instance=ExtResource( 2 )]
+margin_left = 632.0
+margin_right = 984.0
+
+[node name="HSeparator2" type="HSeparator" parent="InputVBoxContainer"]
+margin_top = 223.0
+margin_right = 1024.0
+margin_bottom = 227.0
+
+[node name="TypingControl" parent="InputVBoxContainer" instance=ExtResource( 3 )]
+margin_top = 267.0
+margin_right = 1024.0
+margin_bottom = 267.0
+
+[node name="HSeparator3" type="HSeparator" parent="InputVBoxContainer"]
+margin_top = 307.0
+margin_right = 1024.0
+margin_bottom = 311.0
+
+[node name="SubmitOrthographyButton" type="Button" parent="InputVBoxContainer"]
+margin_top = 351.0
+margin_right = 1024.0
+margin_bottom = 415.0
+custom_fonts/font = SubResource( 1 )
+disabled = true
+text = "Submit"
+
+[node name="HSeparator4" type="HSeparator" parent="InputVBoxContainer"]
+margin_top = 455.0
+margin_right = 1024.0
+margin_bottom = 459.0
+
+[connection signal="confirmed" from="SubmittedPhraseConfirmationDialog" to="." method="_on_SubmittedPhraseConfirmationDialog_confirmed"]
+[connection signal="recorded_spelling" from="InputVBoxContainer/PropertyHBoxContainer/SpellingSoundHBoxContainer" to="." method="_on_Spelling_Sound_HBoxContainer_recorded_spelling"]
+[connection signal="uploaded_file" from="InputVBoxContainer/PropertyHBoxContainer/WordImageHBoxContainer" to="." method="_on_Word_Image_HBoxContainer2_uploaded_file"]
+[connection signal="text_phrase_typed" from="InputVBoxContainer/TypingControl" to="." method="_on_TypingControl_text_phrase_typed"]
+[connection signal="pressed" from="InputVBoxContainer/SubmitOrthographyButton" to="." method="_on_Submit_Orthography_Button_pressed"]

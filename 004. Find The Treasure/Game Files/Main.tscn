@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game Files/Map Files/Map.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game Files/HUD Files/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game Files/Main.gd" type="Script" id=3]
+
+[node name="Main" type="Node"]
+script = ExtResource( 3 )
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.403922, 0.0470588, 0.729412, 1 )
+
+[node name="Map" parent="." instance=ExtResource( 1 )]
+show_behind_parent = true
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ProducePosition" type="Position2D" parent="."]
+position = Vector2( 512, 288 )
+
+[node name="GameTimer" type="Timer" parent="."]
+
+[connection signal="bomb_touched" from="Map" to="." method="_on_Map_bomb_touched"]
+[connection signal="out_of_bounds" from="Map" to="." method="_on_Map_out_of_bounds"]
+[connection signal="picked_treasure" from="Map" to="." method="_on_Map_picked_treasure"]
+[connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]

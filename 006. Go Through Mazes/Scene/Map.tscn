@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Script/Map.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Obstacle.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 61, 61 )
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+obstacle_scene = ExtResource( 2 )
+
+[node name="StartArea" type="Area2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="StartArea"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
+color = Color( 0, 0.376471, 0, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartArea"]
+shape = SubResource( 1 )
+
+[node name="EndArea" type="Area2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="EndArea"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
+color = Color( 0.478431, 0.494118, 0, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea"]
+shape = SubResource( 1 )
+
+[connection signal="area_exited" from="StartArea" to="." method="_on_StartArea_area_exited"]
+[connection signal="area_entered" from="EndArea" to="." method="_on_EndArea_area_entered"]

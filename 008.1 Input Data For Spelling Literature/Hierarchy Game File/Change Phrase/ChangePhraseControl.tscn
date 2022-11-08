@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Hierarchy Game File/Record And Play Audio File/SpellingSoundHBoxContainer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Hierarchy Game File/Change Phrase/ChangePhraseControl.gd" type="Script" id=2]
+[ext_resource path="res://Hierarchy Game File/Upload Image File/WordImageHBoxContainer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Hierarchy Game File/Loading Screen/LoadingScreen.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 250
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 4 )
+
+[node name="ChangePhraseControl" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PhraseLabel" type="Label" parent="HBoxContainer"]
+margin_top = 149.0
+margin_right = 3171.0
+margin_bottom = 450.0
+rect_min_size = Vector2( 655, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "Aliensssssssssssssssss"
+align = 1
+valign = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+margin_left = 3175.0
+margin_right = 3179.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 3183.0
+margin_right = 3535.0
+margin_bottom = 600.0
+alignment = 1
+
+[node name="PhraseType" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 98.0
+margin_right = 352.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+
+[node name="HSeparator4" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+margin_top = 186.0
+margin_right = 352.0
+margin_bottom = 190.0
+
+[node name="SpellingSoundHBoxContainer" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 194.0
+margin_right = 352.0
+margin_bottom = 258.0
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+margin_top = 262.0
+margin_right = 352.0
+margin_bottom = 266.0
+
+[node name="WordImageHBoxContainer" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 270.0
+margin_right = 352.0
+margin_bottom = 398.0
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+margin_top = 402.0
+margin_right = 352.0
+margin_bottom = 406.0
+
+[node name="DeleteButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 410.0
+margin_right = 352.0
+margin_bottom = 494.0
+custom_fonts/font = SubResource( 2 )
+text = "Delete"
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+margin_top = 498.0
+margin_right = 352.0
+margin_bottom = 502.0
+
+[node name="LoadingScreen" parent="." instance=ExtResource( 5 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="recorded_spelling" from="HBoxContainer/VBoxContainer/SpellingSoundHBoxContainer" to="." method="_on_SpellingSoundHBoxContainer_recorded_spelling"]
+[connection signal="uploaded_file" from="HBoxContainer/VBoxContainer/WordImageHBoxContainer" to="." method="_on_WordImageHBoxContainer_uploaded_file"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/DeleteButton" to="." method="_on_DeleteButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

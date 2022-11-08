@@ -1,0 +1,28 @@
+[gd_scene format=2]
+
+[node name="CSG" type="Spatial"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+width = 5.0
+depth = 7.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2 )
+operation = 2
+radius = 1.5
+height = 3.0
+sides = 20
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="CSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2 )
+operation = 2
+radius = 1.5
+height = 3.0
+sides = 20
+
+[node name="CSGSphere" type="CSGSphere" parent="CSGCombiner/CSGBox"]
+operation = 2
+radial_segments = 40
+rings = 20

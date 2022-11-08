@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Hierarchy Game File/Typing Controller/TypingControl.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="TypingControl" type="Control"]
+script = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 364.0
+margin_bottom = 68.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="OrthoghrapyLineEdit" type="LineEdit" parent="HBoxContainer"]
+margin_left = 50.0
+margin_right = 240.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+clear_button_enabled = true
+placeholder_text = "Type Here"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+margin_left = 260.0
+margin_right = 264.0
+margin_bottom = 68.0
+
+[node name="PhraseTypeOptionButton" type="OptionButton" parent="HBoxContainer"]
+margin_left = 284.0
+margin_right = 313.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 2 )
+text = "Vowel"
+clip_text = true
+align = 1
+items = [ "Vowel", null, false, 0, null, "Consonant", null, false, 1, null, "C.Vowel", null, false, 2, null, "C.Consonant", null, false, 3, null, "Spelling", null, false, 4, null, "Word", null, false, 5, null ]
+selected = 0
+
+[connection signal="text_changed" from="HBoxContainer/OrthoghrapyLineEdit" to="." method="_on_Orthoghrapy_LineEdit_text_changed"]
+[connection signal="item_selected" from="HBoxContainer/PhraseTypeOptionButton" to="." method="_on_Phrase_Type_OptionButton_item_selected"]

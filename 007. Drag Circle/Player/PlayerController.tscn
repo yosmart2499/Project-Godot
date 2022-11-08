@@ -1,0 +1,171 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Player/PlayerController.gd" type="Script" id=2]
+[ext_resource path="res://Shape File/Shape.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/AnchorArea.gd" type="Script" id=4]
+[ext_resource path="res://Player/Start.gd" type="Script" id=5]
+[ext_resource path="res://Player/End.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 1
+outline_color = Color( 0.341176, 0.341176, 0.341176, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[node name="PlayerController" type="Node"]
+script = ExtResource( 2 )
+shape_scene = ExtResource( 3 )
+
+[node name="AnchorArea" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -323.0
+script = ExtResource( 4 )
+
+[node name="NoSpawnArea" type="Area2D" parent="AnchorArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnchorArea/NoSpawnArea"]
+shape = SubResource( 4 )
+
+[node name="UIBackground" type="ColorRect" parent="AnchorArea"]
+modulate = Color( 0.4, 0.815686, 1, 1 )
+show_behind_parent = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ChooseMenu" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+mouse_filter = 2
+
+[node name="ShapeContainer" type="VBoxContainer" parent="ChooseMenu"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -87.5
+margin_right = -100.0
+margin_bottom = 87.5
+mouse_filter = 2
+custom_constants/separation = 20
+
+[node name="CircleContainer" type="HBoxContainer" parent="ChooseMenu/ShapeContainer"]
+margin_right = 200.0
+margin_bottom = 45.0
+
+[node name="CircleLabel" type="Label" parent="ChooseMenu/ShapeContainer/CircleContainer"]
+margin_top = 3.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="CircleButton" type="Button" parent="ChooseMenu/ShapeContainer/CircleContainer"]
+margin_left = 4.0
+margin_right = 179.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 175, 0 )
+custom_fonts/font = SubResource( 1 )
+disabled = true
+text = "Circle"
+
+[node name="SquareContainer" type="HBoxContainer" parent="ChooseMenu/ShapeContainer"]
+margin_top = 65.0
+margin_right = 200.0
+margin_bottom = 110.0
+
+[node name="SquareLabel" type="Label" parent="ChooseMenu/ShapeContainer/SquareContainer"]
+margin_top = 3.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="SquareButton" type="Button" parent="ChooseMenu/ShapeContainer/SquareContainer"]
+margin_left = 4.0
+margin_right = 179.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 175, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "Square"
+
+[node name="RectContainer" type="HBoxContainer" parent="ChooseMenu/ShapeContainer"]
+margin_top = 130.0
+margin_right = 200.0
+margin_bottom = 175.0
+
+[node name="RectLabel" type="Label" parent="ChooseMenu/ShapeContainer/RectContainer"]
+margin_top = 3.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="RectButton" type="Button" parent="ChooseMenu/ShapeContainer/RectContainer"]
+margin_left = 4.0
+margin_right = 181.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 175, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "Rectangle"
+
+[node name="ResetButton" type="Button" parent="ChooseMenu"]
+margin_left = -225.0
+margin_top = -201.0
+margin_right = -86.0
+margin_bottom = -156.0
+custom_fonts/font = SubResource( 1 )
+text = "Reset"
+
+[node name="Start" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+
+[node name="StartArea" type="Area2D" parent="Start"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start/StartArea"]
+shape = SubResource( 5 )
+
+[node name="StartBackground" type="ColorRect" parent="Start"]
+show_behind_parent = true
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+color = Color( 0.97, 1, 0.5, 1 )
+
+[node name="End" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 6 )
+
+[node name="EndArea" type="Area2D" parent="End"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End/EndArea"]
+shape = SubResource( 5 )
+
+[node name="EndBackground" type="ColorRect" parent="End"]
+show_behind_parent = true
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+color = Color( 1, 0.5, 0.58, 1 )
+
+[node name="ResetTimer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="mouse_entered" from="AnchorArea/NoSpawnArea" to="." method="_on_NoSpawnArea_mouse_entered"]
+[connection signal="mouse_exited" from="AnchorArea/NoSpawnArea" to="." method="_on_NoSpawnArea_mouse_exited"]
+[connection signal="pressed" from="ChooseMenu/ShapeContainer/CircleContainer/CircleButton" to="." method="_on_Circle_pressed"]
+[connection signal="pressed" from="ChooseMenu/ShapeContainer/SquareContainer/SquareButton" to="." method="_on_Square_pressed"]
+[connection signal="pressed" from="ChooseMenu/ShapeContainer/RectContainer/RectButton" to="." method="_on_Rectangle_pressed"]
+[connection signal="pressed" from="ChooseMenu/ResetButton" to="." method="_on_ResetButton_pressed"]
+[connection signal="area_entered" from="Start/StartArea" to="." method="_on_StartArea_area_entered"]
+[connection signal="area_exited" from="Start/StartArea" to="." method="_on_StartArea_area_exited"]
+[connection signal="area_entered" from="End/EndArea" to="." method="_on_EndArea_area_entered"]
+[connection signal="area_exited" from="End/EndArea" to="." method="_on_EndArea_area_exited"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_ResetTimer_timeout"]

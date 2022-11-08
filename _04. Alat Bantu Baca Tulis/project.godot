@@ -8,11 +8,31 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Object",
+"class": "GraphemeItem",
+"language": "GDScript",
+"path": "res://Script/grapheme_item.gd"
+}, {
+"base": "Object",
+"class": "OrthographyRepository",
+"language": "GDScript",
+"path": "res://Script/orthography_repo.gd"
+} ]
+_global_script_class_icons={
+"GraphemeItem": "",
+"OrthographyRepository": ""
+}
+
 [application]
 
 config/name="_04. Alat Bantu Baca Tulis - Kerja Praktik"
 run/main_scene="res://Modules/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SaveLoading="*res://Script/save_loading.gd"
 
 [display]
 

@@ -1,6 +1,6 @@
 extends Node
 
-var costum_repo; # Must be variant to be able to save succesfully
+var costum_repo; # Must be variant to be able to save succesfully for the cases of forced close
 var file_path: String = "user://costum_save.save";
 
 """

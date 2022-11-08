@@ -1,16 +1,23 @@
-extends Node
+extends Object
+class_name OrthographyRepository
 
+export var repository_dict: Dictionary;
+export var repository_array: Array;
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func repo_add_item(item: GraphemeItem) -> void:
+	if(not self.repository_dict.has(item.type)):
+		self.repository_dict[item.type] = [];
+	self.repository_dict[item.type].append(item);
 
+func repo_add_item_array(item: GraphemeItem) -> void:
+	self.repository_array.append(item);
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func show_list_item(type: String) -> Array:
+	return self.repository_dict.get(type, []);
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func show_item(text: String):
+	for key in self.repository_dict.keys():
+		for item in self.repository_dict.get(key):
+			if(item.text == text):
+				return item;
+	return null;

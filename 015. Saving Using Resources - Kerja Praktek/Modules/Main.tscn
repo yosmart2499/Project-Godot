@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Modules/Main.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Resource/repo.tres" type="Resource" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+main_repo_res = ExtResource( 3 )
+
+[node name="SaveButton" type="Button" parent="."]
+margin_left = 56.0
+margin_top = 96.0
+margin_right = 318.0
+margin_bottom = 141.0
+custom_fonts/font = SubResource( 1 )
+text = "Save Resource"
+
+[node name="LoadButton" type="Button" parent="."]
+margin_left = 384.0
+margin_top = 96.0
+margin_right = 646.0
+margin_bottom = 141.0
+custom_fonts/font = SubResource( 1 )
+text = "Load Resource"
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_LoadButton_pressed"]

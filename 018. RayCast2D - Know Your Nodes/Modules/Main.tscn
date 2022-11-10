@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Modules/Player/PlayerShooting.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Modules/Environment/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Modules/Environment/Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Modules/Player/PlayerEdge.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node"]
+
+[node name="PlayerShooting" parent="." instance=ExtResource( 1 )]
+position = Vector2( 336, 201 )
+
+[node name="Wall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 610, 195 )
+
+[node name="Platform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 302, 464 )
+
+[node name="PlayerEdge" parent="." instance=ExtResource( 4 )]
+position = Vector2( 281, 386 )

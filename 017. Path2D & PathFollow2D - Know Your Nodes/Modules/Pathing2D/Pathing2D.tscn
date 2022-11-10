@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Modules/Pathing2D/Pathing2D.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 55, -61, -55, 61, 67, 82, 80, -147, -80, 147, 104, 308, -58, 139, 58, -139, 241, 507, -135, 8, 135, -8, 297, 165, -177, -19, 177, 19, 375, 422, -102, -19, 102, 19, 515, 255, 19, -71, -19, 71, 704, 336, -61, 2, 61, -2, 827, 415, -14, -71, 14, 71, 894, 488, 10, 119, -10, -119, 975, 262, 221, 271, -221, -271, 588, 142, -10, -40, 10, 40, 67, 82 )
+}
+
+[node name="Pathing2D" type="Path2D"]
+position = Vector2( -16, 36 )
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( 67, 82 )
+rotation = 2.27438
+
+[node name="Sprite" type="Sprite" parent="PathFollow2D"]
+texture = ExtResource( 1 )

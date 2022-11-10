@@ -8,35 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Object",
-"class": "GraphemeItem",
-"language": "GDScript",
-"path": "res://Script/grapheme_item.gd"
-}, {
-"base": "Resource",
-"class": "OrthographyRepository",
-"language": "GDScript",
-"path": "res://Script/orthography_repo.gd"
-} ]
-_global_script_class_icons={
-"GraphemeItem": "",
-"OrthographyRepository": ""
-}
-
 [application]
 
-config/name="_04. Alat Bantu Baca Tulis - Kerja Praktik"
+config/name="016. Label - Know Your Nodes"
 run/main_scene="res://Modules/Main.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-SaveLoading="*res://Script/save_loading.gd"
-
 [display]
 
-window/size/height=576
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

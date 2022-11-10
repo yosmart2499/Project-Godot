@@ -18,7 +18,8 @@ func _on_SaveButton_pressed():
 
 func _on_LoadButton_pressed():
 	var temp_saved_res = load(save_res_path);
-	print(temp_saved_res.repository_dict);
+	main_repo_res = temp_saved_res;
+	print(main_repo_res.repository_dict);
 	for keys in temp_saved_res.repository_dict.keys():
 		print(keys);
 		for object in temp_saved_res.repository_dict[keys]:

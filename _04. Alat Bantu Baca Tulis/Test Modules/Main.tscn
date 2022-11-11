@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Test Modules/Main.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Resources/orthography_repository.tres" type="Resource" id=2]
+[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+repo_resource = ExtResource( 2 )
+
+[node name="SaveButton" type="Button" parent="."]
+margin_left = 128.0
+margin_top = 64.0
+margin_right = 248.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 1 )
+text = "Save"
+
+[node name="LoadButton" type="Button" parent="."]
+margin_left = 320.0
+margin_top = 64.0
+margin_right = 440.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 1 )
+text = "LOAD"
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_LoadButton_pressed"]

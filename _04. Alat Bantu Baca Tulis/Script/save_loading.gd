@@ -1,7 +1,7 @@
 extends Node
 
 func save_to_resource(resource: Resource, path: String) -> void:
-	ResourceSaver.save(path, resource)
+	print(ResourceSaver.save(path, resource));
 
 func load_from_resource(path: String) -> Resource:
 	return load(path);

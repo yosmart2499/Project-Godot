@@ -3,6 +3,7 @@
 [ext_resource path="res://Modules/Pickups/Baloon/Baloon.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
+resource_local_to_scene = true
 radius = 32.0
 
 [node name="Baloon" type="Area2D"]
@@ -13,3 +14,5 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Baloon_body_entered"]

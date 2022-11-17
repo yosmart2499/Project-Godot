@@ -1,12 +1,18 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=8 format=2]
 
 [ext_resource path="res://Script/screen_resource.gd" type="Script" id=1]
 [ext_resource path="res://Modules/UI/User Selection/UserSelection.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Modules/UI/Choose Feature/ChooseFeature.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Add Edit Delete.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Modules/UI/Add Edit Delete Display View/Add Change/AddChange.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete Display/DisplayList.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Modules/UI/Add Edit Delete Display View/View/View.tscn" type="PackedScene" id=7]
 
 [resource]
 script = ExtResource( 1 )
 user_selection_screen = ExtResource( 2 )
 choose_feature_screen = ExtResource( 3 )
 add_edit_delete_display_view_screen = ExtResource( 4 )
+grapheme_form_screen = ExtResource( 5 )
+grapheme_list_screen = ExtResource( 6 )
+grapheme_item_screen = ExtResource( 7 )

@@ -36,6 +36,10 @@ config/name="_04. Alat Bantu Baca Tulis - Kerja Praktik"
 run/main_scene="res://Modules/Main.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+enable_audio_input=true
+
 [autoload]
 
 SaveLoading="*res://Script/save_loading.gd"

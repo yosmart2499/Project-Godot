@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Modules/UI/Add Edit Delete Display View/Add Change/AddChange.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -11,9 +12,12 @@ font_data = ExtResource( 1 )
 size = 32
 font_data = ExtResource( 1 )
 
+[sub_resource type="AudioStreamMicrophone" id=3]
+
 [node name="AddChange" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 
 [node name="UserLabel" type="Label" parent="."]
 margin_right = 40.0
@@ -22,13 +26,19 @@ custom_fonts/font = SubResource( 1 )
 text = "User"
 
 [node name="AddOrChange" type="Label" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -396.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -198.0
+margin_right = 198.0
 margin_bottom = 58.0
 custom_fonts/font = SubResource( 1 )
 text = "Add/Change"
-align = 2
+align = 1
+
+[node name="WarningEmpty" type="AcceptDialog" parent="."]
+margin_right = 48.0
+margin_bottom = 40.0
+resizable = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
@@ -41,13 +51,14 @@ margin_right = 301.0
 margin_bottom = 576.0
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+[node name="Image" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
 margin_top = 90.0
 margin_right = 298.0
 margin_bottom = 388.0
 rect_min_size = Vector2( 298, 298 )
 texture = ExtResource( 2 )
-stretch_mode = 6
+expand = true
+stretch_mode = 1
 
 [node name="UploadBtn" type="Button" parent="HBoxContainer/VBoxContainer"]
 margin_top = 392.0
@@ -55,6 +66,19 @@ margin_right = 298.0
 margin_bottom = 437.0
 custom_fonts/font = SubResource( 2 )
 text = "Upload"
+
+[node name="ImgUpload" type="FileDialog" parent="HBoxContainer/VBoxContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 202.5
+margin_top = -65.0
+margin_right = 517.5
+margin_bottom = 65.0
+window_title = "Open a File"
+mode = 0
+access = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 441.0
@@ -73,6 +97,13 @@ margin_right = 298.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 2 )
 text = "Play"
+
+[node name="StreamPlay" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+
+[node name="StreamRecord" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+stream = SubResource( 3 )
+autoplay = true
+bus = "Record"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 305.0
@@ -159,3 +190,9 @@ custom_fonts/font = SubResource( 2 )
 text = "Type     Place"
 align = 1
 valign = 1
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/UploadBtn" to="." method="_on_UploadBtn_pressed"]
+[connection signal="file_selected" from="HBoxContainer/VBoxContainer/ImgUpload" to="." method="_on_ImgUpload_file_selected"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/RecordBtn" to="." method="_on_RecordBtn_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/PlayBtn" to="." method="_on_PlayBtn_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/ConfrimBtn" to="." method="_on_ConfrimBtn_pressed"]

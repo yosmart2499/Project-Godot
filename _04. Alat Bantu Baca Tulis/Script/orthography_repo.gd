@@ -6,23 +6,31 @@ enum {TEXT, TYPE, SPELLING, PRONOUNCE}
 export var repository_dict: Dictionary;
 
 func add_item(item: GraphemeItem) -> void:
-	var ref_item: GraphemeItem = self.find_item(item.text);
-	if(ref_item != null):
+	if(self.find_item(item.text, item.type) != null):
 		return;
-	if(not self.repository_dict.has(item.type)):
+	if(not self.repository_dict.get(item.type)):
 		self.repository_dict[item.type] = [];
 	self.repository_dict[item.type].append(item);
 
-func delete_item(text: String, default: bool = false) -> GraphemeItem:
-	var ref_item: GraphemeItem = self.find_item(text);
-	repository_dict.get(ref_item.type).erase(ref_item);
-	if(default):
-		ref_item.free();
-		return null;
-	return ref_item;
+func find_item(text: String, type: String) -> GraphemeItem:
+	if(type in self.repository_dict.keys()):
+		for item in self.repository_dict[type]:
+			if(item.text == text.to_lower()):
+				return item;
+	return null;
 
-func change_item(text: String, data, flags:int) -> void:
-	var ref_item: GraphemeItem = self.find_item(text);
+func delete_item(text: String, type: String) -> void:
+	var temp_item: GraphemeItem = self.find_item(text, type);
+	if(temp_item != null):
+		self.repository_dict[type].erase(temp_item);
+		temp_item.free();
+	if(self.repository_dict[type].empty()):
+		print(self.repository_dict.erase(type));
+
+func change_item(text: String, type: String, data, flags:int) -> void:
+	var ref_item: GraphemeItem = self.find_item(text, type);
+	ref_item.text = ref_item.text.to_lower();
+	ref_item.type = ref_item.type.to_lower();
 	if(flags != TYPE):
 		if(flags == TEXT):
 			ref_item.text = data;
@@ -33,18 +41,21 @@ func change_item(text: String, data, flags:int) -> void:
 		if(flags == PRONOUNCE):
 			ref_item.pronounce = data;
 			return;
-	self.delete_item(text);
+	self.delete_item(text, type);
 	ref_item.type = data;
 	self.add_item(ref_item);
 
-func find_item(text: String) -> GraphemeItem:
+func show_repository() -> void:
+	var counter: = 0;
+	print(self.repository_dict);
 	for key in self.repository_dict.keys():
-		for item in self.repository_dict.get(key):
-			if(item.text == text):
-				return item;
-	return null;
+		for item in self.repository_dict[key]:
+			print(String(counter) + " - " + key + " - " + item.text + " - " + String(item.spelling));
+			counter += 1;
 
-func show_list_item(type: String) -> Array:
+func show_list_item(type: String = "") -> Array:
+	if(type == ""):
+		return self.repository_dict.keys();
 	return self.repository_dict.get(type, []);
 
 

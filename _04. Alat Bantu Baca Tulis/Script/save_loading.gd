@@ -1,22 +1,18 @@
 extends Node
 
-func save_to_resource(resource: Resource, path: String) -> void:
-	print(ResourceSaver.save(path, resource));
+"""
+Always use export in the var to save something.
+"""
+export var orthography_repo: Resource = preload("res://Assets/Resources/orthography_repository.tres");
 
-func load_from_resource(path: String) -> Resource:
-	return load(path);
+var save_path: String = "user://orthography_repository.tres";
 
-#func save_to_file(data, path: String) -> void:
-#	var file: = File.new();
-#	file.open(path, File.WRITE);
-#	file.store_var(data, true);
-#	file.close();
 
-#func load_from_file(path: String):
-#	var file: = File.new();
-#	var data;
-#	if(file.file_exists(path)):
-#		file.open(path, File.READ);
-#		data = file.get_var(true);
-#		file.close();
-#	return data;
+func save_to_resource() -> void:
+	print(ResourceSaver.save(self.save_path, self.orthography_repo));
+
+func load_from_resource() -> void:
+	var temp_directory: Directory = Directory.new();
+	if(temp_directory.file_exists(self.save_path)):
+		self.orthography_repo = load(self.save_path);
+		self.orthography_repo.show_repository();

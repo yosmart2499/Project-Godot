@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Modules/Main.gd" type="Script" id=1]
+[ext_resource path="res://Modules/Environment/Junk.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Junk" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 366, 235 )
+
+[node name="Junk2" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 485, 252 )
+
+[node name="Junk3" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 412, 221 )
+
+[node name="Junk4" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 443, 252 )

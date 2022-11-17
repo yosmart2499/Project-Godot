@@ -56,3 +56,7 @@ margin_bottom = 480.0
 rect_min_size = Vector2( 352, 96 )
 custom_fonts/font = SubResource( 1 )
 text = "Third"
+
+[connection signal="pressed" from="VBoxContainer/FirstBtn" to="." method="_on_FirstBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer/SecondBtn" to="." method="_on_SecondBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer/ThirdBtn" to="." method="_on_ThirdBtn_pressed"]

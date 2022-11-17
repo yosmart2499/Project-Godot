@@ -1,13 +1,21 @@
 extends Node
 
 enum Category{STUDENT, TEACHER};
-enum Scene{CHOOSE_FEATURE, ADD_EDIT_DELETE, DISPLAY_GRAPHEME_LIST, DISPLAY_GRAPHEME_ITEM, GRAPHEME_FORM};
+enum Scene{CHOOSE_FEATURE, ADD_EDIT_DELETE, GRAPHEME_FORM, DISPLAY_GRAPHEME_LIST, DISPLAY_GRAPHEME_ITEM};
+enum Mode{ADD, CHANGE}
 
 var user_type: int = -1;
 var screen_type: int = -1;
+var mode_type: int = -1;
+
+var ref_ortho_repo: OrthographyRepository;
+var ref_selected_item: GraphemeItem;
 
 signal user_selected();
 signal change_screen();
+
+func load_repo():
+	self.ref_ortho_repo = (SaveLoading.orthography_repo as OrthographyRepository);
 
 func set_user(type: int) -> void:
 	self.user_type = type;
@@ -16,3 +24,9 @@ func set_user(type: int) -> void:
 func set_screen(type: int) -> void:
 	self.screen_type = type;
 	emit_signal("change_screen");
+
+func set_mode(type: int) -> void:
+	self.mode_type = type;
+
+func select_item(item: GraphemeItem) -> void:
+	self.ref_selected_item = item;

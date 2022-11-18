@@ -8,7 +8,6 @@ onready var ref_navigator: ScreenNavigator = (screen_navigator as ScreenNavigato
 onready var back_button: Button = preload("res://Modules/UI/Step Back/BackBtn.tscn").instance();
 
 func _ready() -> void:
-	SaveLoading.load_from_resource();
 	print(UserAccess.connect("change_screen", self, "change_scene"));
 	update_screen();
 	self.add_child(current_screen);

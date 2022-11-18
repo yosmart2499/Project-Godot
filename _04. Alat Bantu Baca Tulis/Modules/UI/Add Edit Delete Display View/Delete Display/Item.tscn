@@ -12,6 +12,7 @@ margin_right = 192.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 192, 64 )
 custom_fonts/font = SubResource( 4 )
+toggle_mode = true
 text = "A"
 script = ExtResource( 2 )
 

@@ -23,4 +23,14 @@ shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="Triangle" type="StaticBody2D" parent="Pivot"]
+position = Vector2( 50, 0 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot/Triangle"]
+polygon = PoolVector2Array( 20, 0, 0, 20, 0, -20 )
+
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

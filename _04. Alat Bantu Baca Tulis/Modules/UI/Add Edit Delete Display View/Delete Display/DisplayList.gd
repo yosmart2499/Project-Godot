@@ -11,10 +11,13 @@ func _ready() -> void:
 		$WindowSize/ItemList.clear();
 		for key in UserAccess.ref_ortho_repo.show_list_item():
 			$WindowSize/ItemList.add_item(key);
+		if(UserAccess.mode_type == UserAccess.Mode.CHANGE):
+			$DeleteBtn.hide();
+		if(UserAccess.mode_type == UserAccess.Mode.DELETE):
+			$DeleteBtn.show();
 	else:
 		$UserLabel.text = "Student";
 		$DeleteBtn.hide();
-		$ConfirmBtn.hide();
 
 
 func _on_ItemList_item_selected(index: int) -> void:

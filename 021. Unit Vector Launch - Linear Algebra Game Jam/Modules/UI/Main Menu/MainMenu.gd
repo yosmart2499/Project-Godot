@@ -10,7 +10,7 @@ func _ready() -> void:
 	self.score_component.reset_everything();
 
 func change_score_label() -> void:
-	$HighScore.text = "Score: " + String(self.score_component.high_score);
+	$HighScore.text = "High Score: " + String(self.score_component.high_score);
 
 func _on_PlayBtn_pressed():
 	self.emit_signal("start_game");

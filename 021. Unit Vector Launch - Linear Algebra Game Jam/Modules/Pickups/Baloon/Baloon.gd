@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	# Because in the docs say it was editor-only helper which is it makes to only respond with Godot editor
 	# For custom shape either I create it my self or check true in Local To Scene.
 	# That's my thought.
-	$CollisionShape2D.shape.radius = int(self.radius);
+	$CollisionShape2D.shape.radius = int(self.radius) + 25;
 	self.update();
 	if(self.radius <= 0):
 		self.queue_free();

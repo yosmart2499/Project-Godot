@@ -1,4 +1,4 @@
-extends Resource
+extends Object
 class_name OrthographyRepository
 
 enum {TEXT, TYPE, SPELLING, PRONOUNCE}
@@ -50,7 +50,10 @@ func show_repository() -> void:
 	print(self.repository_dict);
 	for key in self.repository_dict.keys():
 		for item in self.repository_dict[key]:
-			print(String(counter) + " - " + key + " - " + item.text + " - " + String(item.spelling));
+			if(item.pronounce == null || item.text_image == null):
+				print(String(counter) + " - " + key + " - " + item.text + " - " + String(item.spelling));
+			else:
+				print(String(counter) + " - " + key + " - " + item.text + " - " + String(item.spelling) + " - " + String(item.pronounce) + " - " + String(item.text_image));
 			counter += 1;
 
 func show_list_item(type: String = "") -> Array:

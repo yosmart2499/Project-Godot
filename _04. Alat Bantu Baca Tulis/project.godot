@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/grapheme_item.gd"
 }, {
-"base": "Resource",
+"base": "Object",
 "class": "OrthographyRepository",
 "language": "GDScript",
 "path": "res://Script/orthography_repo.gd"

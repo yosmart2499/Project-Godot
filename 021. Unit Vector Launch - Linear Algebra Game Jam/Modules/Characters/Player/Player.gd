@@ -22,12 +22,12 @@ func get_input() -> void:
 			self.impulses.reset_impulses();
 	else:
 		$Sprite.modulate = Color.gray;
-		print(self.linear_velocity.length_squared());
 
 func rotate_player_component(radians: float):
 		self.unit_direction = self.unit_direction.rotated(radians);
 		$Sprite.rotate(radians);
 		$CollisionShape2D.rotate(radians);
+		$Pivot.rotate(radians);
 
 func _physics_process(_delta: float) -> void:
 	self.get_input();
@@ -51,5 +51,4 @@ func _integrate_forces(_state: Physics2DDirectBodyState) -> void:
 		self.linear_velocity.y *= -1;
 
 func _on_VisibilityNotifier2D_screen_exited():
-	print("BuGsS!!!");
 	self.queue_free();

@@ -1,9 +1,13 @@
 extends Button
 
-func set_attributes(grapheme: GraphemeItem, mode: bool):
+var item_obj: Object;
+
+func set_attributes(grapheme: Object, mode: bool):
 	self.text = grapheme.text;
 	self.toggle_mode = mode;
-	UserAccess.select_item(grapheme);
+	self.item_obj = grapheme;
 
 func _on_Item_pressed():
-	UserAccess.set_screen(UserAccess.Scene.DISPLAY_GRAPHEME_ITEM);
+	if(UserAccess.mode_type == UserAccess.Mode.CHANGE):
+		UserAccess.select_item(item_obj);
+		UserAccess.set_screen(UserAccess.Scene.DISPLAY_GRAPHEME_ITEM);

@@ -5,12 +5,12 @@ export var item_scene: PackedScene = preload("res://Modules/UI/Add Edit Delete D
 var toggle_mode: bool = false;
 
 func _ready() -> void:
+	$WindowSize/ItemList.clear();
+	for key in UserAccess.ref_ortho_repo.show_list_item():
+		$WindowSize/ItemList.add_item(key);
 	if(UserAccess.user_type == UserAccess.Category.TEACHER):
 		$UserLabel.text = "Teacher";
 		self.toggle_mode = true;
-		$WindowSize/ItemList.clear();
-		for key in UserAccess.ref_ortho_repo.show_list_item():
-			$WindowSize/ItemList.add_item(key);
 		if(UserAccess.mode_type == UserAccess.Mode.CHANGE):
 			$DeleteBtn.hide();
 		if(UserAccess.mode_type == UserAccess.Mode.DELETE):

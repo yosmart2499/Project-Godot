@@ -1,3 +1,10 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Modules/Characters/Player/PlayerKinematic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Modules/Main.gd" type="Script" id=2]
 
 [node name="Main" type="Node"]
+script = ExtResource( 2 )
+
+[node name="PlayerKinematic" parent="." instance=ExtResource( 1 )]
+position = Vector2( 498, 276 )

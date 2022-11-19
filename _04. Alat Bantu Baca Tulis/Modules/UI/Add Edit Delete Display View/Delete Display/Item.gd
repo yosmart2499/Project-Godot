@@ -8,6 +8,9 @@ func set_attributes(grapheme: Object, mode: bool):
 	self.item_obj = grapheme;
 
 func _on_Item_pressed():
-	if(UserAccess.mode_type == UserAccess.Mode.CHANGE):
+	if(UserAccess.mode_type == UserAccess.Mode.CHANGE && UserAccess.user_type == UserAccess.Category.TEACHER):
+		UserAccess.select_item(item_obj);
+		UserAccess.set_screen(UserAccess.Scene.DISPLAY_GRAPHEME_ITEM);
+	if(UserAccess.user_type == UserAccess.Category.STUDENT):
 		UserAccess.select_item(item_obj);
 		UserAccess.set_screen(UserAccess.Scene.DISPLAY_GRAPHEME_ITEM);

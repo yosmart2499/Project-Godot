@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Add Change/AddChange.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -46,24 +47,25 @@ anchor_bottom = 1.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 3.0
-margin_right = 301.0
+margin_left = 1.0
+margin_right = 303.0
 margin_bottom = 576.0
 alignment = 1
 
 [node name="Image" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
-margin_top = 90.0
-margin_right = 298.0
-margin_bottom = 388.0
+margin_top = 96.0
+margin_right = 302.0
+margin_bottom = 394.0
 rect_min_size = Vector2( 298, 298 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
 
 [node name="UploadBtn" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 392.0
-margin_right = 298.0
+margin_top = 398.0
+margin_right = 302.0
 margin_bottom = 437.0
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 text = "Upload"
 
@@ -82,19 +84,23 @@ access = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 441.0
-margin_right = 298.0
-margin_bottom = 486.0
+margin_right = 302.0
+margin_bottom = 480.0
 
 [node name="RecordBtn" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 174.0
-margin_bottom = 45.0
+margin_right = 162.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 162, 0 )
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 text = "Record"
 
 [node name="PlayBtn" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 178.0
-margin_right = 298.0
-margin_bottom = 45.0
+margin_left = 166.0
+margin_right = 302.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 136, 0 )
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 text = "Play"
 
@@ -106,48 +112,52 @@ autoplay = true
 bus = "Record"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 305.0
-margin_right = 639.0
+margin_left = 307.0
+margin_right = 641.0
 margin_bottom = 576.0
 alignment = 1
 
 [node name="Word" type="LineEdit" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 186.0
+margin_top = 189.0
 margin_right = 334.0
-margin_bottom = 235.0
+margin_bottom = 238.0
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 align = 1
 placeholder_text = "Word"
 caret_blink = true
 
 [node name="Spelling" type="LineEdit" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 239.0
+margin_top = 242.0
 margin_right = 334.0
-margin_bottom = 288.0
+margin_bottom = 291.0
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 align = 1
 placeholder_text = "Spelling"
 caret_blink = true
 
 [node name="Type" type="LineEdit" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 292.0
+margin_top = 295.0
 margin_right = 334.0
-margin_bottom = 341.0
+margin_bottom = 344.0
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 align = 1
 placeholder_text = "Type"
 caret_blink = true
 
 [node name="ConfrimBtn" type="Button" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 345.0
+margin_top = 348.0
 margin_right = 334.0
-margin_bottom = 390.0
+margin_bottom = 387.0
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 text = "Confirm"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 643.0
-margin_right = 1021.0
+margin_left = 645.0
+margin_right = 1023.0
 margin_bottom = 576.0
 alignment = 1
 

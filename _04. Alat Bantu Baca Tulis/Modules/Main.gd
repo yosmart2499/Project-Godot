@@ -17,6 +17,7 @@ func _notification(what: int) -> void:
 		SaveLoading.save_to_resource();
 
 func change_scene() -> void:
+	UserAccess.ref_ortho_repo.show_repository();
 	UserAccess.load_repo();
 	print(UserAccess.Category.keys()[UserAccess.user_type]);
 	print(UserAccess.Scene.keys()[UserAccess.screen_type]);

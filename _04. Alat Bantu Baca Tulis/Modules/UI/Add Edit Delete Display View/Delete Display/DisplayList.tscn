@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete Display/DisplayList.gd" type="Script" id=2]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete Display/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -32,6 +33,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -45.0
 margin_right = 320.0
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 text = "Delete"
 
@@ -56,6 +58,7 @@ margin_bottom = -96.0
 margin_right = 192.0
 margin_bottom = 384.0
 rect_min_size = Vector2( 192, 384 )
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 3 )
 items = [ "Alphabhet", null, false, "Verb", null, false, "Noun", null, false, "Conjuction", null, false, "Item 4", null, false, "Item 5", null, false, "Item 6", null, false, "Item 7", null, false, "Item 8", null, false, "Item 9", null, false, "Item 10", null, false, "Item 11", null, false, "Item 12", null, false, "Item 13", null, false, "Item 14", null, false, "Item 15", null, false, "Item 16", null, false, "Item 17", null, false ]
 
@@ -64,6 +67,7 @@ margin_left = 192.0
 margin_right = 204.0
 margin_bottom = 12.0
 rect_min_size = Vector2( 734, 384 )
+theme = ExtResource( 4 )
 
 [node name="GridContainer" type="GridContainer" parent="WindowSize/ScrollContainer"]
 margin_right = 704.0

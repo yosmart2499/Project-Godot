@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/UI/Step Back/BackBtn.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Resources/screen_navigator.tres" type="Resource" id=3]
+[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -13,6 +14,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -224.0
 margin_bottom = 83.0
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 1 )
 text = "Back"
 script = ExtResource( 2 )

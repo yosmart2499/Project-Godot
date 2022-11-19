@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	if(UserAccess.Category.STUDENT):
+	if(UserAccess.user_type == UserAccess.Category.STUDENT):
 		$ChangeBtn.hide();
 		$UserLabel.text = "Student";
 	else:
@@ -18,7 +18,7 @@ func _ready():
 			$HBoxContainer/VBoxContainer2/PronounceSound.stream = UserAccess.ref_selected_item.pronounce;
 
 func _on_ChangeBtn_pressed():
-	pass # Replace with function body.
+	UserAccess.set_screen(UserAccess.Scene.GRAPHEME_FORM);
 
 func _on_PlayBtn_pressed():
 	$HBoxContainer/VBoxContainer2/PronounceSound.volume_db = 20;

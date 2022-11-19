@@ -9,7 +9,17 @@ func _ready() -> void:
 	if(UserAccess.mode_type == UserAccess.Mode.ADD):
 		$AddOrChange.text = "Add";
 	else:
+		$HBoxContainer/VBoxContainer2/Word.text = UserAccess.ref_selected_item.text;
+		$HBoxContainer/VBoxContainer2/Type.text = UserAccess.ref_selected_item.type;
+		$HBoxContainer/VBoxContainer2/Spelling.text = PoolStringArray(UserAccess.ref_selected_item.spelling).join("-");
+		if(UserAccess.ref_selected_item.text_image != null):
+			$HBoxContainer/VBoxContainer/Image.texture = UserAccess.ref_selected_item.text_image;
+		if(UserAccess.ref_selected_item.pronounce != null):
+			$HBoxContainer/VBoxContainer/HBoxContainer/StreamPlay.stream = UserAccess.ref_selected_item.pronounce;
 		$AddOrChange.text = "Change";
+		$HBoxContainer/VBoxContainer3/WordDisplay.text = $HBoxContainer/VBoxContainer2/Word.text.capitalize();
+		$HBoxContainer/VBoxContainer3/SpellingDisplay.text = $HBoxContainer/VBoxContainer2/Spelling.text.capitalize().replace(" ", "");
+		$HBoxContainer/VBoxContainer3/TypeDisplay.text = $HBoxContainer/VBoxContainer2/Type.text.capitalize();
 
 func _on_UploadBtn_pressed() -> void:
 	$HBoxContainer/VBoxContainer/ImgUpload.add_filter("*.png");
@@ -35,7 +45,7 @@ func _on_RecordBtn_pressed() -> void:
 		$HBoxContainer/VBoxContainer/HBoxContainer/PlayBtn.disabled = true;
 
 func _on_PlayBtn_pressed() -> void:
-	$HBoxContainer/VBoxContainer/HBoxContainer/StreamPlay.volume_db = 30;
+	$HBoxContainer/VBoxContainer/HBoxContainer/StreamPlay.volume_db = 20;
 	$HBoxContainer/VBoxContainer/HBoxContainer/StreamPlay.play();
 
 func _on_ConfrimBtn_pressed() -> void:
@@ -57,7 +67,10 @@ func _on_ConfrimBtn_pressed() -> void:
 		temp_item.text_image = $HBoxContainer/VBoxContainer/Image.texture;
 	if($HBoxContainer/VBoxContainer/HBoxContainer/StreamPlay.stream != null):
 		temp_item.pronounce = $HBoxContainer/VBoxContainer/HBoxContainer/StreamPlay.stream;
-	UserAccess.ref_ortho_repo.add_item(temp_item);
+	if(UserAccess.mode_type == UserAccess.Mode.ADD):
+		UserAccess.ref_ortho_repo.add_item(temp_item);
+	else:
+		UserAccess.ref_ortho_repo.change_item(temp_item, UserAccess.ref_selected_item);
 	$HBoxContainer/VBoxContainer3/WordDisplay.text = $HBoxContainer/VBoxContainer2/Word.text.capitalize();
 	$HBoxContainer/VBoxContainer3/SpellingDisplay.text = $HBoxContainer/VBoxContainer2/Spelling.text.capitalize().replace(" ", "");
 	$HBoxContainer/VBoxContainer3/TypeDisplay.text = $HBoxContainer/VBoxContainer2/Type.text.capitalize();

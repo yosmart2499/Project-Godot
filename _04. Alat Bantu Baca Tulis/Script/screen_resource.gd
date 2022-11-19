@@ -28,9 +28,13 @@ func step_back():
 		UserAccess.set_screen(-1);
 	if(UserAccess.user_type == UserAccess.Category.TEACHER && UserAccess.screen_type == UserAccess.Scene.ADD_EDIT_DELETE):
 		UserAccess.set_screen(UserAccess.Scene.CHOOSE_FEATURE);
-	if(UserAccess.screen_type == UserAccess.Scene.GRAPHEME_FORM):
+	if(UserAccess.user_type == UserAccess.Category.TEACHER && UserAccess.screen_type == UserAccess.Scene.GRAPHEME_FORM):
 		UserAccess.set_screen(UserAccess.Scene.ADD_EDIT_DELETE);
 	if(UserAccess.user_type == UserAccess.Category.TEACHER && UserAccess.screen_type == UserAccess.Scene.DISPLAY_GRAPHEME_LIST):
 		UserAccess.set_screen(UserAccess.Scene.ADD_EDIT_DELETE);
-	if(UserAccess.screen_type == UserAccess.Scene.DISPLAY_GRAPHEME_ITEM):
+	if(UserAccess.user_type == UserAccess.Category.TEACHER && UserAccess.screen_type == UserAccess.Scene.DISPLAY_GRAPHEME_ITEM):
+		UserAccess.set_screen(UserAccess.Scene.DISPLAY_GRAPHEME_LIST);
+	if(UserAccess.user_type == UserAccess.Category.STUDENT && UserAccess.screen_type == UserAccess.Scene.DISPLAY_GRAPHEME_LIST):
+		UserAccess.set_screen(UserAccess.Scene.CHOOSE_FEATURE);
+	if(UserAccess.user_type == UserAccess.Category.STUDENT && UserAccess.screen_type == UserAccess.Scene.DISPLAY_GRAPHEME_ITEM):
 		UserAccess.set_screen(UserAccess.Scene.DISPLAY_GRAPHEME_LIST);

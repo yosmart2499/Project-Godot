@@ -14,3 +14,5 @@ func _ready():
 func _on_SecondBtn_pressed():
 	if(UserAccess.user_type == UserAccess.Category.TEACHER):
 		UserAccess.set_screen(UserAccess.Scene.ADD_EDIT_DELETE);
+	if(UserAccess.user_type == UserAccess.Category.STUDENT):
+		UserAccess.set_screen(UserAccess.Scene.DISPLAY_GRAPHEME_LIST);

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete Display/DisplayList.gd" type="Script" id=2]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete Display/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Created Themes/General/Adventure_bg.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -49,10 +50,21 @@ dialog_autowrap = true
 [node name="WindowSize" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 64.0
-margin_top = 96.0
-margin_right = -64.0
-margin_bottom = -96.0
+margin_left = 40.0
+margin_top = 112.0
+margin_right = -88.0
+margin_bottom = -80.0
+
+[node name="Background" type="TextureRect" parent="WindowSize"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 64.0
+margin_bottom = 16.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
 
 [node name="ItemList" type="ItemList" parent="WindowSize"]
 margin_right = 192.0
@@ -63,9 +75,9 @@ custom_fonts/font = SubResource( 3 )
 items = [ "Alphabhet", null, false, "Verb", null, false, "Noun", null, false, "Conjuction", null, false, "Item 4", null, false, "Item 5", null, false, "Item 6", null, false, "Item 7", null, false, "Item 8", null, false, "Item 9", null, false, "Item 10", null, false, "Item 11", null, false, "Item 12", null, false, "Item 13", null, false, "Item 14", null, false, "Item 15", null, false, "Item 16", null, false, "Item 17", null, false ]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="WindowSize"]
-margin_left = 192.0
-margin_right = 204.0
-margin_bottom = 12.0
+margin_left = 208.0
+margin_right = 942.0
+margin_bottom = 384.0
 rect_min_size = Vector2( 734, 384 )
 theme = ExtResource( 4 )
 

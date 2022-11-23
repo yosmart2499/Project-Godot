@@ -127,22 +127,6 @@ custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "Answer 4"
 
-[node name="WinningLabel" type="Label" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -216.0
-margin_top = -19.5
-margin_right = 216.0
-margin_bottom = 19.5
-custom_fonts/font = SubResource( 1 )
-text = "You Won 50 berry!"
-align = 1
-valign = 1
-autowrap = true
-
 [node name="QuestionTimer" type="Timer" parent="."]
 process_mode = 0
 wait_time = 10.0

@@ -10,6 +10,7 @@ export var grapheme_item_screen: PackedScene = preload("res://Modules/UI/Add Edi
 export var choose_game_screen: PackedScene = preload("res://Modules/Games/ListGame.tscn");
 export var game_questionnaire_screen: PackedScene = preload("res://Modules/Games/Questionnaire/Game Questionnaire/GameQuestionnaire.tscn");
 export var add_questionnaire_screen: PackedScene = preload("res://Modules/Games/Questionnaire/Add Questionnaire/AddQuestionnaire.tscn");
+export var winning_screen: PackedScene = preload("res://Modules/Games/Winning Screen/WinningScreen.tscn");
 
 func produce_instance():
 	if(UserAccess.user_type == -1 && UserAccess.screen_type == -1):
@@ -30,8 +31,10 @@ func produce_instance():
 		return self.add_questionnaire_screen.instance();
 	if(UserAccess.screen_type == UserAccess.Scene.GAME_QUESTIONNAIRE):
 		return self.game_questionnaire_screen.instance();
+	if(UserAccess.screen_type == UserAccess.Scene.WINNING_SCREEN):
+		return self.winning_screen.instance();
 
-func step_back():
+func step_back() -> void:
 	if(UserAccess.screen_type == UserAccess.Scene.CHOOSE_FEATURE):
 		UserAccess.set_user(-1);
 		UserAccess.set_screen(-1);
@@ -51,5 +54,5 @@ func step_back():
 		UserAccess.set_screen(UserAccess.Scene.CHOOSE_FEATURE);
 	if(UserAccess.screen_type == UserAccess.Scene.ADD_QUESTIONNAIRE):
 		UserAccess.set_screen(UserAccess.Scene.GAME_LIST);
-	if(UserAccess.screen_type == UserAccess.Scene.GAME_QUESTIONNAIRE):
+	if(UserAccess.screen_type == UserAccess.Scene.WINNING_SCREEN):
 		UserAccess.set_screen(UserAccess.Scene.GAME_LIST);

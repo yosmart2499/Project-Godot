@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "ScreenNavigator",
 "language": "GDScript",
 "path": "res://Script/screen_resource.gd"
+}, {
+"base": "Resource",
+"class": "StudentAttributes",
+"language": "GDScript",
+"path": "res://Script/student_attributes.gd"
 } ]
 _global_script_class_icons={
 "GraphemeItem": "",
 "OrthographyRepository": "",
 "QuestionnaireDatabase": "",
 "QuestionnaireItem": "",
-"ScreenNavigator": ""
+"ScreenNavigator": "",
+"StudentAttributes": ""
 }
 
 [application]

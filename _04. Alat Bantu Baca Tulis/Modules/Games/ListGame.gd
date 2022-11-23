@@ -1,4 +1,4 @@
-extends Node
+extends Control
 
 func _ready():
 	if(UserAccess.user_type == UserAccess.Category.STUDENT):

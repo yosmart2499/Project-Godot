@@ -7,6 +7,9 @@ export var add_edit_delete_display_view_screen: PackedScene = preload("res://Mod
 export var grapheme_form_screen: PackedScene = preload("res://Modules/UI/Add Edit Delete Display View/Add Change/AddChange.tscn");
 export var grapheme_list_screen: PackedScene = preload("res://Modules/UI/Add Edit Delete Display View/Delete Display/DisplayList.tscn");
 export var grapheme_item_screen: PackedScene = preload("res://Modules/UI/Add Edit Delete Display View/View/View.tscn");
+export var choose_game_screen: PackedScene = preload("res://Modules/Games/ListGame.tscn");
+export var game_questionnaire_screen: PackedScene = preload("res://Modules/Games/Questionnaire/Game Questionnaire/GameQuestionnaire.tscn");
+export var add_questionnaire_screen: PackedScene = preload("res://Modules/Games/Questionnaire/Add Questionnaire/AddQuestionnaire.tscn");
 
 func produce_instance():
 	if(UserAccess.user_type == -1 && UserAccess.screen_type == -1):
@@ -21,6 +24,12 @@ func produce_instance():
 		return self.grapheme_list_screen.instance();
 	if(UserAccess.screen_type == UserAccess.Scene.DISPLAY_GRAPHEME_ITEM):
 		return self.grapheme_item_screen.instance();
+	if(UserAccess.screen_type == UserAccess.Scene.GAME_LIST):
+		return self.choose_game_screen.instance();
+	if(UserAccess.screen_type == UserAccess.Scene.ADD_QUESTIONNAIRE):
+		return self.add_questionnaire_screen.instance();
+	if(UserAccess.screen_type == UserAccess.Scene.GAME_QUESTIONNAIRE):
+		return self.game_questionnaire_screen.instance();
 
 func step_back():
 	if(UserAccess.screen_type == UserAccess.Scene.CHOOSE_FEATURE):
@@ -38,3 +47,9 @@ func step_back():
 		UserAccess.set_screen(UserAccess.Scene.CHOOSE_FEATURE);
 	if(UserAccess.user_type == UserAccess.Category.STUDENT && UserAccess.screen_type == UserAccess.Scene.DISPLAY_GRAPHEME_ITEM):
 		UserAccess.set_screen(UserAccess.Scene.DISPLAY_GRAPHEME_LIST);
+	if(UserAccess.screen_type == UserAccess.Scene.GAME_LIST):
+		UserAccess.set_screen(UserAccess.Scene.CHOOSE_FEATURE);
+	if(UserAccess.screen_type == UserAccess.Scene.ADD_QUESTIONNAIRE):
+		UserAccess.set_screen(UserAccess.Scene.GAME_LIST);
+	if(UserAccess.screen_type == UserAccess.Scene.GAME_QUESTIONNAIRE):
+		UserAccess.set_screen(UserAccess.Scene.GAME_LIST);

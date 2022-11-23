@@ -20,6 +20,16 @@ _global_script_classes=[ {
 "path": "res://Script/orthography_repo.gd"
 }, {
 "base": "Resource",
+"class": "QuestionnaireDatabase",
+"language": "GDScript",
+"path": "res://Script/questionnaire_database.gd"
+}, {
+"base": "Object",
+"class": "QuestionnaireItem",
+"language": "GDScript",
+"path": "res://Script/questionnaire_item.gd"
+}, {
+"base": "Resource",
 "class": "ScreenNavigator",
 "language": "GDScript",
 "path": "res://Script/screen_resource.gd"
@@ -27,6 +37,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "GraphemeItem": "",
 "OrthographyRepository": "",
+"QuestionnaireDatabase": "",
+"QuestionnaireItem": "",
 "ScreenNavigator": ""
 }
 

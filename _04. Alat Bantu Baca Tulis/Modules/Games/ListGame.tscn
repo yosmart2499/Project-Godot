@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Modules/Games/ListGame.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="ListGame" type="Node"]
+script = ExtResource( 3 )
+
+[node name="UserLabel" type="Label" parent="."]
+margin_right = 160.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 2 )
+text = "User"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -341.5
+margin_top = -48.0
+margin_right = 341.5
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( -514, -204 )
+
+[node name="Questionnaire" type="Button" parent="VBoxContainer"]
+margin_right = 683.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 448, 96 )
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Questionnaire"
+
+[connection signal="pressed" from="VBoxContainer/Questionnaire" to="." method="_on_Questionnaire_pressed"]

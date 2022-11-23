@@ -41,7 +41,6 @@ margin_bottom = 96.0
 rect_min_size = Vector2( 448, 96 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
-disabled = true
 text = "First"
 
 [node name="SecondBtn" type="Button" parent="VBoxContainer"]
@@ -53,4 +52,5 @@ theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
 text = "Second"
 
+[connection signal="pressed" from="VBoxContainer/FirstBtn" to="." method="_on_FirstBtn_pressed"]
 [connection signal="pressed" from="VBoxContainer/SecondBtn" to="." method="_on_SecondBtn_pressed"]

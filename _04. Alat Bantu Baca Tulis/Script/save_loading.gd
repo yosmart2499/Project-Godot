@@ -3,24 +3,34 @@ extends Node
 """
 Always use export in the var to save something.
 """
+const ortho_repo_save_path: String = "user://orthography_repository.save";
+const questionnaire_save_path: String = "user://questionnaire_database.tres";
+
 var orthography_repo: OrthographyRepository = OrthographyRepository.new();
 
-var save_path: String = "user://orthography_repository.save";
+func _ready() -> void:
+	self.load_from_file();
 
-func _ready():
-	load_from_resource();
+func save_to_resource(resource: Resource) -> void:
+	ResourceSaver.save(self.questionnaire_save_path, resource);
 
-func save_to_resource() -> void:
+func load_from_resource() -> Resource:
+	if(ResourceLoader.exists(self.questionnaire_save_path)):
+		return ResourceLoader.load(self.questionnaire_save_path);
+	else:
+		return QuestionnaireDatabase.new();
+
+func save_to_file() -> void:
 	var temp_file = File.new()
-	temp_file.open(save_path, File.WRITE)
-	temp_file.store_var(orthography_repo, true)
+	temp_file.open(self.ortho_repo_save_path, File.WRITE)
+	temp_file.store_var(self.orthography_repo, true)
 	temp_file.close()
 
-func load_from_resource() -> void:
+func load_from_file() -> void:
 	var temp_file = File.new()
-	if temp_file.file_exists(save_path):
-		temp_file.open(save_path, File.READ)
-		orthography_repo.repository_dict = temp_file.get_var(true).repository_dict;
+	if temp_file.file_exists(self.ortho_repo_save_path):
+		temp_file.open(self.ortho_repo_save_path, File.READ)
+		self.orthography_repo.repository_dict = temp_file.get_var(true).repository_dict;
 		temp_file.close();
 	UserAccess.load_repo();
 

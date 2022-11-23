@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=11 format=2]
 
 [ext_resource path="res://Script/screen_resource.gd" type="Script" id=1]
 [ext_resource path="res://Modules/UI/User Selection/UserSelection.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Add Change/AddChange.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete Display/DisplayList.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/View/View.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Modules/Games/Questionnaire/Add Questionnaire/AddQuestionnaire.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Modules/Games/ListGame.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Modules/Games/Questionnaire/Game Questionnaire/GameQuestionnaire.tscn" type="PackedScene" id=10]
 
 [resource]
 script = ExtResource( 1 )
@@ -16,3 +19,6 @@ add_edit_delete_display_view_screen = ExtResource( 4 )
 grapheme_form_screen = ExtResource( 5 )
 grapheme_list_screen = ExtResource( 6 )
 grapheme_item_screen = ExtResource( 7 )
+choose_game_screen = ExtResource( 9 )
+game_questionnaire_screen = ExtResource( 10 )
+add_questionnaire_screen = ExtResource( 8 )

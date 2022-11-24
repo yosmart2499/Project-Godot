@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-berry_pocket = 0
+berry_pocket = 1000

@@ -11,6 +11,7 @@ export var choose_game_screen: PackedScene = preload("res://Modules/Games/ListGa
 export var game_questionnaire_screen: PackedScene = preload("res://Modules/Games/Questionnaire/Game Questionnaire/GameQuestionnaire.tscn");
 export var add_questionnaire_screen: PackedScene = preload("res://Modules/Games/Questionnaire/Add Questionnaire/AddQuestionnaire.tscn");
 export var winning_screen: PackedScene = preload("res://Modules/Games/Winning Screen/WinningScreen.tscn");
+export var mosnter_market_screen: PackedScene = preload("res://Modules/Games/Monster Market/MonsterMarket.tscn");
 
 func produce_instance():
 	if(UserAccess.user_type == -1 && UserAccess.screen_type == -1):
@@ -33,6 +34,8 @@ func produce_instance():
 		return self.game_questionnaire_screen.instance();
 	if(UserAccess.screen_type == UserAccess.Scene.WINNING_SCREEN):
 		return self.winning_screen.instance();
+	if(UserAccess.screen_type == UserAccess.Scene.MONSTER_MARKET):
+		return self.mosnter_market_screen.instance();
 
 func step_back() -> void:
 	if(UserAccess.screen_type == UserAccess.Scene.CHOOSE_FEATURE):
@@ -55,4 +58,6 @@ func step_back() -> void:
 	if(UserAccess.screen_type == UserAccess.Scene.ADD_QUESTIONNAIRE):
 		UserAccess.set_screen(UserAccess.Scene.GAME_LIST);
 	if(UserAccess.screen_type == UserAccess.Scene.WINNING_SCREEN):
+		UserAccess.set_screen(UserAccess.Scene.GAME_LIST);
+	if(UserAccess.screen_type == UserAccess.Scene.MONSTER_MARKET):
 		UserAccess.set_screen(UserAccess.Scene.GAME_LIST);

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=2]
@@ -10,6 +10,10 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
 font_data = ExtResource( 2 )
 
 [node name="ListGame" type="Control"]
@@ -28,18 +32,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -341.5
+margin_left = -384.0
 margin_top = -48.0
-margin_right = 341.5
+margin_right = 384.0
 margin_bottom = 48.0
 rect_pivot_offset = Vector2( -514, -204 )
 
 [node name="Questionnaire" type="Button" parent="VBoxContainer"]
-margin_right = 683.0
+margin_right = 768.0
 margin_bottom = 96.0
-rect_min_size = Vector2( 448, 96 )
+rect_min_size = Vector2( 768, 96 )
 theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Questionnaire"
 
+[node name="BuyMonster" type="Button" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = -96.0
+margin_right = 330.0
+margin_bottom = -32.0
+rect_min_size = Vector2( 320, 64 )
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Buy The MOnster"
+
 [connection signal="pressed" from="VBoxContainer/Questionnaire" to="." method="_on_Questionnaire_pressed"]
+[connection signal="pressed" from="BuyMonster" to="." method="_on_BuyMonster_pressed"]

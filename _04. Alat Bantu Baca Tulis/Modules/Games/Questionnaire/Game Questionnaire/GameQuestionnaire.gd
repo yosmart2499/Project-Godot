@@ -13,6 +13,8 @@ func _ready() -> void:
 	self.questionnaire_resource = SaveLoading.load_from_resource();
 	self.questionnaire_resource.show_debug();
 	self.predetermined_question = self.questionnaire_resource.give_random_questions(2);
+	if(self.predetermined_question == []):
+		return;
 	self.change_display();
 
 func change_display() -> void:

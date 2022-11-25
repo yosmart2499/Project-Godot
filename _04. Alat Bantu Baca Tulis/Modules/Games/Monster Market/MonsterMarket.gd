@@ -16,6 +16,11 @@ func _ready() -> void:
 	$PriceTag.text = String(self.monsters_selection[self.monster_index].berry_cost) + " Berry";
 	$PocketBerry.text = "Pocket: " + String(student_att_resource.berry_pocket);
 	$BuyButton.disabled = self.monsters_selection[self.monster_index].bought;
+	self.resize_monster();
+
+func resize_monster() -> void:
+	for monster in self.monsters_selection:
+		monster.scale = Vector2.ONE * 5;
 
 func hide_every_monster() -> void:
 	for monster in self.monsters_selection:

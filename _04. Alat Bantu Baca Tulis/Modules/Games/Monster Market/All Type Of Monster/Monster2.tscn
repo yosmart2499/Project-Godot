@@ -7,15 +7,10 @@
 script = ExtResource( 2 )
 berry_cost = 750
 
-[node name="Monster2" type="TextureRect" parent="."]
+[node name="Image" type="Sprite" parent="."]
 modulate = Color( 1, 0.501961, 0.831373, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -152.0
-margin_top = -152.0
-margin_right = 152.0
-margin_bottom = 152.0
 texture = ExtResource( 1 )
-expand = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

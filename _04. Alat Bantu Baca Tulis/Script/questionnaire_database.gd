@@ -22,3 +22,4 @@ func show_debug() -> void:
 	for item in self.all_questions:
 		print(String(counter) + " - " + item.question + " - " + String(item.answers)
 		+ " - " +  String(item.right_answer) + " - " + String(item.berry_weight));
+		counter += 1;

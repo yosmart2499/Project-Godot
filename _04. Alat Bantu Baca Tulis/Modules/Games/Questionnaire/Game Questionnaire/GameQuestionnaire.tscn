@@ -129,7 +129,6 @@ text = "Answer 4"
 
 [node name="QuestionTimer" type="Timer" parent="."]
 process_mode = 0
-wait_time = 10.0
 autostart = true
 
 [node name="SecondTimer" type="Timer" parent="."]

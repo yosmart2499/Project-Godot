@@ -2,8 +2,7 @@ extends Resource
 class_name StudentAttributes
 
 export var berry_pocket: int = 1000;
-
-var berry_collected: int = 0;
+export var berry_collected: int = 0;
 
 func add_collected_berry(value: int) -> void:
 	self.berry_collected += value;

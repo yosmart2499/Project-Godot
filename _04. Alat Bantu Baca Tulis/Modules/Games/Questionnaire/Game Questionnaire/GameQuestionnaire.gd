@@ -3,16 +3,19 @@ extends Control
 export var questionnaire_resource: Resource = preload("res://Assets/Resources/questionnaire_database.tres");
 export var student_att_resource: Resource = preload("res://Assets/Resources/student_attributes.tres");
 
+
+var save_path: String = "user://student_attributes.tres";
 var berry_collected: int = 0;
 var predetermined_question: Array;
 var selected_index: int = 0;
-var selected_answer: int = 1;
+var selected_answer: int = -1;
 var item_selected: QuestionnaireItem;
 
 func _ready() -> void:
+	self.student_att_resource = SaveLoading.load_from_resource_general(self.student_att_resource, self.save_path);
 	self.questionnaire_resource = SaveLoading.load_from_resource();
 	self.questionnaire_resource.show_debug();
-	self.predetermined_question = self.questionnaire_resource.give_random_questions(2);
+	self.predetermined_question = self.questionnaire_resource.give_random_questions(4);
 	if(self.predetermined_question == []):
 		return;
 	self.change_display();
@@ -35,12 +38,14 @@ run the rest of the code of the function below it.
 """
 
 func _on_QuestionTimer_timeout() -> void:
+	if(self.selected_answer == self.item_selected.right_answer):
+		self.berry_collected += self.item_selected.berry_weight;
+		self.selected_answer = -1;
 	if(self.selected_index + 1 >= self.predetermined_question.size()):
 		self.student_att_resource.add_collected_berry(self.berry_collected);
+		SaveLoading.save_to_resource_general(student_att_resource, save_path);
 		UserAccess.set_screen(UserAccess.Scene.WINNING_SCREEN);
 	else:
-		if(self.selected_answer == self.item_selected.right_answer):
-			self.berry_collected += self.item_selected.berry_weight;
 		self.selected_index += 1;
 		self.change_display();
 

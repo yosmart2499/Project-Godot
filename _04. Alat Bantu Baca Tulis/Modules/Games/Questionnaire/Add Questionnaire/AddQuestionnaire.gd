@@ -41,11 +41,13 @@ func _on_Confirmation_confirmed() -> void:
 		self.text_ref[6].value
 	));
 	self.questionnaire_resource.show_debug();
-	self.text_ref[0] = "";
-	self.text_ref[1] = "";
-	self.text_ref[2] = "";
-	self.text_ref[3] = "";
-	self.text_ref[4] = "";
+	self.text_ref[0].text = "";
+	self.text_ref[1].text = "";
+	self.text_ref[2].text = "";
+	self.text_ref[3].text = "";
+	self.text_ref[4].text = "";
+	self.text_ref[5].value = 1;
+	self.text_ref[6].value = 0;
 	SaveLoading.save_to_resource(questionnaire_resource);
 
 func _on_Confirmation_about_to_show() -> void:

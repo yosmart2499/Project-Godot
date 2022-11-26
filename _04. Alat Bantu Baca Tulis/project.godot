@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/grapheme_item.gd"
 }, {
+"base": "Resource",
+"class": "IdentifyDatabase",
+"language": "GDScript",
+"path": "res://Script/identify_database.gd"
+}, {
 "base": "Object",
 "class": "OrthographyRepository",
 "language": "GDScript",
@@ -41,6 +46,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "GraphemeItem": "",
+"IdentifyDatabase": "",
 "OrthographyRepository": "",
 "QuestionnaireDatabase": "",
 "QuestionnaireItem": "",

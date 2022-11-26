@@ -9,6 +9,12 @@ onready var back_button: Button = preload("res://Modules/UI/Step Back/BackBtn.ts
 onready var monster_placeholder: Node = preload("res://Modules/UI/Monster Placeholder/MonsterPlaceholder.tscn").instance();
 
 func _ready() -> void:
+#	var temp_array: Array = ["One", 1, "Two", 2];
+#	if(3 in temp_array):
+#		print("Yes");
+#	else:
+#		print("No");
+	
 	UserAccess.connect("change_screen", self, "change_scene");
 	self.update_screen();
 	self.add_child(current_screen);

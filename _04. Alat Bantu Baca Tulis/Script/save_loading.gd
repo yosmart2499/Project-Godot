@@ -14,14 +14,14 @@ func _ready() -> void:
 func save_to_path(variable, save_path: String) -> void:
 	var temp_file: File = File.new();
 	temp_file.open(save_path, File.WRITE);
-	temp_file.store_var(variable);
+	temp_file.store_var(variable, true);
 	temp_file.close();
 
 func load_from_path(variable, save_path: String):
 	var temp_file: File = File.new();
 	if(temp_file.file_exists(save_path)):
 		temp_file.open(save_path, File.READ);
-		variable = temp_file.get_var();
+		variable = temp_file.get_var(true);
 		temp_file.close();
 	return variable;
 

@@ -5,13 +5,15 @@ export var user_selection_screen: PackedScene = preload("res://Modules/UI/User S
 export var choose_feature_screen: PackedScene = preload("res://Modules/UI/Choose Feature/ChooseFeature.tscn");
 export var add_edit_delete_display_view_screen: PackedScene = preload("res://Modules/UI/Add Edit Delete Display View/Add Edit Delete.tscn");
 export var grapheme_form_screen: PackedScene = preload("res://Modules/UI/Add Edit Delete Display View/Add Change/AddChange.tscn");
-export var grapheme_list_screen: PackedScene = preload("res://Modules/UI/Add Edit Delete Display View/Delete Display/DisplayList.tscn");
+export var grapheme_list_screen: PackedScene = preload("res://Modules/UI/Add Edit Delete Display View/Delete or Display/DisplayList.tscn");
 export var grapheme_item_screen: PackedScene = preload("res://Modules/UI/Add Edit Delete Display View/View/View.tscn");
 export var choose_game_screen: PackedScene = preload("res://Modules/Games/ListGame.tscn");
 export var game_questionnaire_screen: PackedScene = preload("res://Modules/Games/Questionnaire/Game Questionnaire/GameQuestionnaire.tscn");
 export var add_questionnaire_screen: PackedScene = preload("res://Modules/Games/Questionnaire/Add Questionnaire/AddQuestionnaire.tscn");
 export var winning_screen: PackedScene = preload("res://Modules/Games/Winning Screen/WinningScreen.tscn");
 export var mosnter_market_screen: PackedScene = preload("res://Modules/Games/Monster Market/MonsterMarket.tscn");
+export var identify_game: PackedScene = preload("res://Modules/Games/Identify an Image/Game Identify/GameIdentify.tscn");
+export var identify_selection: PackedScene = preload("res://Modules/Games/Identify an Image/Select Word/SelectWord.tscn");
 
 func produce_instance():
 	if(UserAccess.user_type == -1 && UserAccess.screen_type == -1):
@@ -36,7 +38,11 @@ func produce_instance():
 		return self.winning_screen.instance();
 	if(UserAccess.screen_type == UserAccess.Scene.MONSTER_MARKET):
 		return self.mosnter_market_screen.instance();
-
+	if(UserAccess.screen_type == UserAccess.Scene.IDENTIFY_GAME):
+		return self.identify_game.instance();
+	if(UserAccess.screen_type == UserAccess.Scene.IDENTIFY_SELECT):
+		return self.identify_selection.instance();
+		
 func step_back() -> void:
 	if(UserAccess.screen_type == UserAccess.Scene.CHOOSE_FEATURE):
 		UserAccess.set_user(-1);
@@ -60,4 +66,6 @@ func step_back() -> void:
 	if(UserAccess.screen_type == UserAccess.Scene.WINNING_SCREEN):
 		UserAccess.set_screen(UserAccess.Scene.GAME_LIST);
 	if(UserAccess.screen_type == UserAccess.Scene.MONSTER_MARKET):
+		UserAccess.set_screen(UserAccess.Scene.GAME_LIST);
+	if(UserAccess.screen_type == UserAccess.Scene.IDENTIFY_SELECT):
 		UserAccess.set_screen(UserAccess.Scene.GAME_LIST);

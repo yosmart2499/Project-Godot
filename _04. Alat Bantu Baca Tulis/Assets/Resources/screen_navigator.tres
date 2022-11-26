@@ -1,17 +1,19 @@
-[gd_resource type="Resource" load_steps=13 format=2]
+[gd_resource type="Resource" load_steps=15 format=2]
 
 [ext_resource path="res://Script/screen_resource.gd" type="Script" id=1]
 [ext_resource path="res://Modules/UI/User Selection/UserSelection.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Modules/UI/Choose Feature/ChooseFeature.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Add Edit Delete.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Add Change/AddChange.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete Display/DisplayList.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete or Display/DisplayList.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/View/View.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Modules/Games/Questionnaire/Add Questionnaire/AddQuestionnaire.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Modules/Games/ListGame.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Modules/Games/Questionnaire/Game Questionnaire/GameQuestionnaire.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Modules/Games/Winning Screen/WinningScreen.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Modules/Games/Monster Market/MonsterMarket.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Modules/Games/Identify an Image/Game Identify/GameIdentify.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Modules/Games/Identify an Image/Select Word/SelectWord.tscn" type="PackedScene" id=14]
 
 [resource]
 script = ExtResource( 1 )
@@ -26,3 +28,5 @@ game_questionnaire_screen = ExtResource( 10 )
 add_questionnaire_screen = ExtResource( 8 )
 winning_screen = ExtResource( 11 )
 mosnter_market_screen = ExtResource( 12 )
+identify_game = ExtResource( 13 )
+identify_selection = ExtResource( 14 )

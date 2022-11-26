@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete Display/DisplayList.gd" type="Script" id=2]
-[ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete Display/Item.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=4]
-[ext_resource path="res://Assets/Created Themes/General/Adventure_bg.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Created Themes/General/Adventure_bg.png" type="Texture" id=3]
+[ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete or Display/DisplayList.gd" type="Script" id=4]
+[ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete or Display/Item.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -21,7 +21,7 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -136, -336 )
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 
 [node name="UserLabel" type="Label" parent="."]
 margin_right = 40.0
@@ -34,7 +34,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -45.0
 margin_right = 320.0
-theme = ExtResource( 4 )
+theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 2 )
 text = "Delete"
 
@@ -62,7 +62,7 @@ margin_left = -16.0
 margin_top = -16.0
 margin_right = 64.0
 margin_bottom = 16.0
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 1
 
@@ -70,7 +70,7 @@ stretch_mode = 1
 margin_right = 192.0
 margin_bottom = 384.0
 rect_min_size = Vector2( 192, 384 )
-theme = ExtResource( 4 )
+theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 3 )
 items = [ "Alphabhet", null, false, "Verb", null, false, "Noun", null, false, "Conjuction", null, false, "Item 4", null, false, "Item 5", null, false, "Item 6", null, false, "Item 7", null, false, "Item 8", null, false, "Item 9", null, false, "Item 10", null, false, "Item 11", null, false, "Item 12", null, false, "Item 13", null, false, "Item 14", null, false, "Item 15", null, false, "Item 16", null, false, "Item 17", null, false ]
 
@@ -79,7 +79,7 @@ margin_left = 208.0
 margin_right = 942.0
 margin_bottom = 384.0
 rect_min_size = Vector2( 734, 384 )
-theme = ExtResource( 4 )
+theme = ExtResource( 2 )
 
 [node name="GridContainer" type="GridContainer" parent="WindowSize/ScrollContainer"]
 margin_right = 704.0
@@ -89,49 +89,49 @@ custom_constants/vseparation = 64
 custom_constants/hseparation = 64
 columns = 3
 
-[node name="Item" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 3 )]
+[node name="Item" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 5 )]
 
-[node name="Item2" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 3 )]
+[node name="Item2" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 5 )]
 margin_left = 256.0
 margin_right = 448.0
 
-[node name="Item3" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 3 )]
+[node name="Item3" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 5 )]
 margin_left = 512.0
 margin_right = 704.0
 
-[node name="Item4" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 3 )]
+[node name="Item4" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 5 )]
 margin_top = 128.0
 margin_bottom = 192.0
 
-[node name="Item5" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 3 )]
+[node name="Item5" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 5 )]
 margin_left = 256.0
 margin_top = 128.0
 margin_right = 448.0
 margin_bottom = 192.0
 
-[node name="Item6" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 3 )]
+[node name="Item6" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 5 )]
 margin_left = 512.0
 margin_top = 128.0
 margin_right = 704.0
 margin_bottom = 192.0
 
-[node name="Item7" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 3 )]
+[node name="Item7" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 5 )]
 margin_top = 256.0
 margin_bottom = 320.0
 
-[node name="Item8" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 3 )]
+[node name="Item8" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 5 )]
 margin_left = 256.0
 margin_top = 256.0
 margin_right = 448.0
 margin_bottom = 320.0
 
-[node name="Item9" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 3 )]
+[node name="Item9" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 5 )]
 margin_left = 512.0
 margin_top = 256.0
 margin_right = 704.0
 margin_bottom = 320.0
 
-[node name="Item10" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 3 )]
+[node name="Item10" parent="WindowSize/ScrollContainer/GridContainer" instance=ExtResource( 5 )]
 margin_top = 384.0
 margin_bottom = 448.0
 

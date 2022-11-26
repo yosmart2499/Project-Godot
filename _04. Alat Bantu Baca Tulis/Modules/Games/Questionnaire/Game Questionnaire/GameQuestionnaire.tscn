@@ -73,6 +73,7 @@ custom_fonts/font = SubResource( 1 )
 text = "Question?"
 align = 1
 valign = 1
+clip_text = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 103.0
@@ -98,6 +99,7 @@ rect_min_size = Vector2( 400, 64 )
 custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "Answer 1"
+clip_text = true
 
 [node name="Answer2" type="Button" parent="VBoxContainer/VBoxContainer2/CenterContainer/GridContainer"]
 margin_left = 464.0
@@ -107,6 +109,7 @@ rect_min_size = Vector2( 400, 64 )
 custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "Answer 2"
+clip_text = true
 
 [node name="Answer3" type="Button" parent="VBoxContainer/VBoxContainer2/CenterContainer/GridContainer"]
 margin_top = 128.0
@@ -116,6 +119,7 @@ rect_min_size = Vector2( 400, 64 )
 custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "Answer 3"
+clip_text = true
 
 [node name="Answer4" type="Button" parent="VBoxContainer/VBoxContainer2/CenterContainer/GridContainer"]
 margin_left = 464.0
@@ -126,6 +130,7 @@ rect_min_size = Vector2( 400, 64 )
 custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "Answer 4"
+clip_text = true
 
 [node name="QuestionTimer" type="Timer" parent="."]
 process_mode = 0

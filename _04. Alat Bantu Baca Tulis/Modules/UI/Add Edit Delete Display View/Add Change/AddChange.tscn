@@ -49,22 +49,22 @@ alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 6.0
 margin_right = 308.0
-margin_bottom = 576.0
+margin_bottom = 600.0
 alignment = 1
 
 [node name="Image" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
-margin_top = 96.0
+margin_top = 108.0
 margin_right = 302.0
-margin_bottom = 394.0
+margin_bottom = 406.0
 rect_min_size = Vector2( 298, 298 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
 
 [node name="UploadBtn" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 398.0
+margin_top = 410.0
 margin_right = 302.0
-margin_bottom = 437.0
+margin_bottom = 449.0
 theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 text = "Upload"
@@ -83,9 +83,9 @@ mode = 0
 access = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 441.0
+margin_top = 453.0
 margin_right = 302.0
-margin_bottom = 480.0
+margin_bottom = 492.0
 
 [node name="RecordBtn" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_right = 162.0
@@ -114,13 +114,13 @@ bus = "Record"
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 312.0
 margin_right = 636.0
-margin_bottom = 576.0
+margin_bottom = 600.0
 alignment = 1
 
 [node name="Word" type="LineEdit" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 204.0
+margin_top = 216.0
 margin_right = 324.0
-margin_bottom = 243.0
+margin_bottom = 255.0
 theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 align = 1
@@ -128,9 +128,9 @@ placeholder_text = "Word"
 caret_blink = true
 
 [node name="Spelling" type="LineEdit" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 247.0
+margin_top = 259.0
 margin_right = 324.0
-margin_bottom = 286.0
+margin_bottom = 298.0
 theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 align = 1
@@ -138,9 +138,9 @@ placeholder_text = "Spelling"
 caret_blink = true
 
 [node name="Type" type="LineEdit" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 290.0
+margin_top = 302.0
 margin_right = 324.0
-margin_bottom = 329.0
+margin_bottom = 341.0
 theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 align = 1
@@ -148,9 +148,9 @@ placeholder_text = "Type"
 caret_blink = true
 
 [node name="ConfrimBtn" type="Button" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 333.0
+margin_top = 345.0
 margin_right = 324.0
-margin_bottom = 372.0
+margin_bottom = 384.0
 theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 text = "Confirm"
@@ -158,48 +158,52 @@ text = "Confirm"
 [node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 640.0
 margin_right = 1018.0
-margin_bottom = 576.0
+margin_bottom = 600.0
 alignment = 1
 
 [node name="TitleLabel" type="Label" parent="HBoxContainer/VBoxContainer3"]
-margin_top = 204.0
+margin_top = 216.0
 margin_right = 378.0
-margin_bottom = 243.0
+margin_bottom = 255.0
 rect_min_size = Vector2( 378, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Display Text"
 align = 1
 valign = 1
+clip_text = true
 
 [node name="WordDisplay" type="Label" parent="HBoxContainer/VBoxContainer3"]
-margin_top = 247.0
+margin_top = 259.0
 margin_right = 378.0
-margin_bottom = 286.0
+margin_bottom = 298.0
 rect_min_size = Vector2( 378, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Wording  Place"
 align = 1
 valign = 1
+clip_text = true
 
 [node name="SpellingDisplay" type="Label" parent="HBoxContainer/VBoxContainer3"]
-margin_top = 290.0
+margin_top = 302.0
 margin_right = 378.0
-margin_bottom = 329.0
+margin_bottom = 341.0
 rect_min_size = Vector2( 378, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Spelling Place"
 align = 1
 valign = 1
+clip_text = true
 
 [node name="TypeDisplay" type="Label" parent="HBoxContainer/VBoxContainer3"]
-margin_top = 333.0
+margin_top = 345.0
 margin_right = 378.0
-margin_bottom = 372.0
+margin_bottom = 384.0
 rect_min_size = Vector2( 378, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Type     Place"
 align = 1
 valign = 1
+clip_text = true
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/UploadBtn" to="." method="_on_UploadBtn_pressed"]
 [connection signal="file_selected" from="HBoxContainer/VBoxContainer/ImgUpload" to="." method="_on_ImgUpload_file_selected"]

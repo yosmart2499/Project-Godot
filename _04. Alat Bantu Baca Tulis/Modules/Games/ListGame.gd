@@ -13,7 +13,12 @@ func _on_Questionnaire_pressed() -> void:
 	if(UserAccess.user_type == UserAccess.Category.STUDENT):
 		UserAccess.set_screen(UserAccess.Scene.GAME_QUESTIONNAIRE);
 
-
 func _on_BuyMonster_pressed() -> void:
 	if(UserAccess.user_type == UserAccess.Category.STUDENT):
 		UserAccess.set_screen(UserAccess.Scene.MONSTER_MARKET);
+
+func _on_Identify_pressed():
+	if(UserAccess.user_type == UserAccess.Category.STUDENT):
+		UserAccess.set_screen(UserAccess.Scene.IDENTIFY_GAME);
+	if(UserAccess.user_type == UserAccess.Category.TEACHER):
+		UserAccess.set_screen(UserAccess.Scene.IDENTIFY_SELECT);

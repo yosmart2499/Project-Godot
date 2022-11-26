@@ -1,6 +1,6 @@
 extends Control
 
-export var item_scene: PackedScene = preload("res://Modules/UI/Add Edit Delete Display View/Delete Display/Item.tscn");
+export var item_scene: PackedScene = preload("res://Modules/UI/Add Edit Delete Display View/Delete or Display/Item.tscn");
 
 var toggle_mode: bool = false;
 

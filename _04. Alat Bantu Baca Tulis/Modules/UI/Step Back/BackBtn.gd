@@ -9,7 +9,8 @@ func _ready() -> void:
 	UserAccess.connect("change_screen", self, "back_button_show");
 
 func back_button_show() -> void:
-	if(UserAccess.user_type == -1 || UserAccess.screen_type == UserAccess.Scene.GAME_QUESTIONNAIRE):
+	if(UserAccess.user_type == -1 || UserAccess.screen_type == UserAccess.Scene.GAME_QUESTIONNAIRE
+	|| UserAccess.screen_type == UserAccess.Scene.IDENTIFY_GAME):
 		self.hide();
 	else:
 		self.show();

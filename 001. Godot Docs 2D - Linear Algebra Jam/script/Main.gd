@@ -4,6 +4,8 @@ export (PackedScene) var mob_scene;
 var score;
 
 func _ready():
+	print(97 % 7);
+	print(101 % 7);
 	randomize();
 
 # Want to try if I can call another function with group_call() method. Rather making a instance.

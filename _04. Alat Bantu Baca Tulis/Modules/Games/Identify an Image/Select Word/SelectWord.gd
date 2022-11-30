@@ -7,7 +7,6 @@ const save_path: String = "user://identify_database.tres";
 
 func _ready() -> void:
 	self.identify_databse_res = SaveLoading.load_from_resource_general(self.identify_databse_res, save_path);
-	print(self.identify_databse_res.selected_grapheme);
 	self.identify_databse_res.connect("selected_change", self, "change_display_chosen");
 	self.change_display_chosen();
 	$WindowSize/ItemList.clear();

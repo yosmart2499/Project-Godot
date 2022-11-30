@@ -3,7 +3,6 @@ extends Control
 export var questionnaire_resource: Resource = preload("res://Assets/Resources/questionnaire_database.tres");
 export var student_att_resource: Resource = preload("res://Assets/Resources/student_attributes.tres");
 
-
 var save_path: String = "user://student_attributes.tres";
 var berry_collected: int = 0;
 var predetermined_question: Array;

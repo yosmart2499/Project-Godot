@@ -48,15 +48,15 @@ margin_right = 256.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
 texture = ExtResource( 2 )
+expand = true
 stretch_mode = 6
 
-[node name="Answer" type="Button" parent="HBoxContainer/GridContainer/BoxIdentify1"]
+[node name="Answer1" type="Button" parent="HBoxContainer/GridContainer/BoxIdentify1"]
 margin_top = 196.0
 margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
 custom_fonts/font = SubResource( 1 )
-toggle_mode = true
 text = "Answer 1"
 
 [node name="BoxIdentify2" type="VBoxContainer" parent="HBoxContainer/GridContainer"]
@@ -69,16 +69,16 @@ margin_right = 256.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
 texture = ExtResource( 2 )
+expand = true
 stretch_mode = 6
 
-[node name="Answer" type="Button" parent="HBoxContainer/GridContainer/BoxIdentify2"]
+[node name="Answer2" type="Button" parent="HBoxContainer/GridContainer/BoxIdentify2"]
 margin_top = 196.0
 margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
 custom_fonts/font = SubResource( 1 )
-toggle_mode = true
-text = "Answer 1"
+text = "Answer 2"
 
 [node name="BoxIdentify3" type="VBoxContainer" parent="HBoxContainer/GridContainer"]
 margin_top = 292.0
@@ -90,16 +90,16 @@ margin_right = 256.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
 texture = ExtResource( 2 )
+expand = true
 stretch_mode = 6
 
-[node name="Answer" type="Button" parent="HBoxContainer/GridContainer/BoxIdentify3"]
+[node name="Answer3" type="Button" parent="HBoxContainer/GridContainer/BoxIdentify3"]
 margin_top = 196.0
 margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
 custom_fonts/font = SubResource( 1 )
-toggle_mode = true
-text = "Answer 1"
+text = "Answer 3"
 
 [node name="BoxIdentify4" type="VBoxContainer" parent="HBoxContainer/GridContainer"]
 margin_left = 288.0
@@ -112,16 +112,16 @@ margin_right = 256.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
 texture = ExtResource( 2 )
+expand = true
 stretch_mode = 6
 
-[node name="Answer" type="Button" parent="HBoxContainer/GridContainer/BoxIdentify4"]
+[node name="Answer4" type="Button" parent="HBoxContainer/GridContainer/BoxIdentify4"]
 margin_top = 196.0
 margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
 custom_fonts/font = SubResource( 1 )
-toggle_mode = true
-text = "Answer 1"
+text = "Answer 4"
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 margin_left = 576.0
@@ -223,5 +223,9 @@ autostart = true
 process_mode = 0
 autostart = true
 
+[connection signal="pressed" from="HBoxContainer/GridContainer/BoxIdentify1/Answer1" to="." method="_on_Answer1_pressed"]
+[connection signal="pressed" from="HBoxContainer/GridContainer/BoxIdentify2/Answer2" to="." method="_on_Answer2_pressed"]
+[connection signal="pressed" from="HBoxContainer/GridContainer/BoxIdentify3/Answer3" to="." method="_on_Answer3_pressed"]
+[connection signal="pressed" from="HBoxContainer/GridContainer/BoxIdentify4/Answer4" to="." method="_on_Answer4_pressed"]
 [connection signal="timeout" from="GivenTimer" to="." method="_on_GivenTimer_timeout"]
 [connection signal="timeout" from="SecondTimer" to="." method="_on_SecondTimer_timeout"]

@@ -16,9 +16,9 @@ func _ready() -> void:
 	self.questionnaire_resource = SaveLoading.load_from_resource();
 	self.questionnaire_resource.show_debug();
 	if(UserAccess.user_type == UserAccess.Category.STUDENT):
-		$UserLabel.text = "Student";
+		$UserLabel.text = "Siswa";
 	else:
-		$UserLabel.text = "Teacher";
+		$UserLabel.text = "Guru";
 
 func _on_Confirm_pressed() -> void:
 	if(self.text_ref[0].text.empty()):
@@ -51,14 +51,14 @@ func _on_Confirmation_confirmed() -> void:
 	SaveLoading.save_to_resource(questionnaire_resource);
 
 func _on_Confirmation_about_to_show() -> void:
-	var text_dialog: String = "Are you sure you want to submit this question? \n \n" \
-	+ "Question: %s \n" % self.text_ref[0].text \
-	+ "Answer 1: %s \n" % self.text_ref[1].text \
-	+ "Answer 2: %s \n" % self.text_ref[2].text \
-	+ "Answer 3: %s \n" % self.text_ref[3].text \
-	+ "Answer 4: %s \n" % self.text_ref[4].text \
-	+ "Correct Answer: %s \n" % self.text_ref[5].value \
-	+ "Berry Weight: %s \n" % self.text_ref[6].value;
+	var text_dialog: String = "Apa benar kamu mau membuat pertanyaan ini? \n \n" \
+	+ "Pertanyaan: %s \n" % self.text_ref[0].text \
+	+ "Jawaban 1: %s \n" % self.text_ref[1].text \
+	+ "Jawaban 2: %s \n" % self.text_ref[2].text \
+	+ "Jawaban 3: %s \n" % self.text_ref[3].text \
+	+ "Jawaban 4: %s \n" % self.text_ref[4].text \
+	+ "Jawaban Benar: %s \n" % self.text_ref[5].value \
+	+ "Berry Diberikan: %s \n" % self.text_ref[6].value;
 	
 	$Confirmation.dialog_text = text_dialog.format(self.text_ref);
 

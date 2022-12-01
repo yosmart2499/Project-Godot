@@ -54,7 +54,7 @@ margin_bottom = 224.0
 rect_min_size = Vector2( 768, 96 )
 theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Identify Image"
+text = "Identifikasi"
 
 [node name="BuyMonster" type="Button" parent="."]
 visible = false
@@ -67,7 +67,7 @@ margin_bottom = -32.0
 rect_min_size = Vector2( 320, 64 )
 theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 3 )
-text = "Buy The MOnster"
+text = "Beli Monster"
 
 [connection signal="pressed" from="VBoxContainer/Questionnaire" to="." method="_on_Questionnaire_pressed"]
 [connection signal="pressed" from="VBoxContainer/Identify" to="." method="_on_Identify_pressed"]

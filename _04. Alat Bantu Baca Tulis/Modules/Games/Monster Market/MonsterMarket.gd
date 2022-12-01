@@ -9,12 +9,12 @@ onready var monsters_selection: Array = $MonsterContainer.get_children();
 
 func _ready() -> void:
 	if(UserAccess.user_type == UserAccess.Category.STUDENT):
-		$UserLabel.text = "Student";
+		$UserLabel.text = "Siswa";
 	else:
-		$UserLabel.text = "Teacher";
+		$UserLabel.text = "Guru";
 	self.student_att_resource = SaveLoading.load_from_resource_general(self.student_att_resource, self.save_path);
 	$PriceTag.text = String(self.monsters_selection[self.monster_index].berry_cost) + " Berry";
-	$PocketBerry.text = "Pocket: " + String(student_att_resource.berry_pocket);
+	$PocketBerry.text = "Kantong: " + String(student_att_resource.berry_pocket);
 	$BuyButton.disabled = self.monsters_selection[self.monster_index].bought;
 	self.resize_monster();
 
@@ -52,8 +52,6 @@ func _on_BuyButton_pressed():
 		$PocketBerry.text = "Pocket: " + String(student_att_resource.berry_pocket);
 		self.monsters_selection[self.monster_index].bought_and_display();
 		$BuyButton.disabled = true;
-	else:
-		print("Not enough money");
 
 func _on_MonsterMarket_tree_exited():
 	SaveLoading.save_to_resource_general(self.student_att_resource, self.save_path);

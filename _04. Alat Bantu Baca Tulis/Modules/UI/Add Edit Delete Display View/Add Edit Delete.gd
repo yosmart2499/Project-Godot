@@ -1,10 +1,10 @@
 extends Control
 
 func _ready():
-	$UserLabel.text = "Teacher";
-	$VBoxContainer/FirstBtn.text = "Add";
-	$VBoxContainer/SecondBtn.text = "Change";
-	$VBoxContainer/ThirdBtn.text = "Delete"
+	$UserLabel.text = "Guru";
+	$VBoxContainer/FirstBtn.text = "Tambah";
+	$VBoxContainer/SecondBtn.text = "Ganti";
+	$VBoxContainer/ThirdBtn.text = "Hapus"
 
 
 func _on_FirstBtn_pressed():

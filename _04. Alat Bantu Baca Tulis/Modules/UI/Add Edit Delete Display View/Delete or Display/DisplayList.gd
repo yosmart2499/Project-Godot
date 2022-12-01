@@ -9,14 +9,14 @@ func _ready() -> void:
 	for key in UserAccess.ref_ortho_repo.show_list_item():
 		$WindowSize/ItemList.add_item(key);
 	if(UserAccess.user_type == UserAccess.Category.TEACHER):
-		$UserLabel.text = "Teacher";
+		$UserLabel.text = "Guru";
 		self.toggle_mode = true;
 		if(UserAccess.mode_type == UserAccess.Mode.CHANGE):
 			$DeleteBtn.hide();
 		if(UserAccess.mode_type == UserAccess.Mode.DELETE):
 			$DeleteBtn.show();
 	else:
-		$UserLabel.text = "Student";
+		$UserLabel.text = "Siswa";
 		$DeleteBtn.hide();
 
 

@@ -57,7 +57,7 @@ margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
 custom_fonts/font = SubResource( 1 )
-text = "Answer 1"
+text = "Jawaban 1"
 
 [node name="BoxIdentify2" type="VBoxContainer" parent="HBoxContainer/GridContainer"]
 margin_left = 288.0
@@ -78,7 +78,7 @@ margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
 custom_fonts/font = SubResource( 1 )
-text = "Answer 2"
+text = "Jawaban 2"
 
 [node name="BoxIdentify3" type="VBoxContainer" parent="HBoxContainer/GridContainer"]
 margin_top = 292.0
@@ -99,7 +99,7 @@ margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
 custom_fonts/font = SubResource( 1 )
-text = "Answer 3"
+text = "Jawaban 3"
 
 [node name="BoxIdentify4" type="VBoxContainer" parent="HBoxContainer/GridContainer"]
 margin_left = 288.0
@@ -121,7 +121,7 @@ margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
 custom_fonts/font = SubResource( 1 )
-text = "Answer 4"
+text = "Jawaban 4"
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 margin_left = 576.0
@@ -141,7 +141,7 @@ margin_right = 416.0
 margin_bottom = 252.0
 rect_min_size = Vector2( 378, 0 )
 custom_fonts/font = SubResource( 2 )
-text = "Word"
+text = "Kata"
 align = 1
 valign = 1
 
@@ -151,7 +151,7 @@ margin_right = 416.0
 margin_bottom = 295.0
 rect_min_size = Vector2( 378, 0 )
 custom_fonts/font = SubResource( 2 )
-text = "Spel-ling"
+text = "E-Ja-An"
 align = 1
 valign = 1
 
@@ -161,7 +161,7 @@ margin_right = 416.0
 margin_bottom = 338.0
 rect_min_size = Vector2( 378, 0 )
 custom_fonts/font = SubResource( 2 )
-text = "Type"
+text = "Tipe"
 align = 1
 valign = 1
 
@@ -176,7 +176,7 @@ margin_right = 432.0
 margin_bottom = 39.0
 rect_min_size = Vector2( 256, 32 )
 custom_fonts/font = SubResource( 3 )
-text = "Timer: 5"
+text = "Sisa Waktu: 5"
 align = 2
 valign = 1
 
@@ -186,7 +186,7 @@ margin_right = 432.0
 margin_bottom = 86.0
 rect_min_size = Vector2( 256, 32 )
 custom_fonts/font = SubResource( 3 )
-text = "Collected: 10000"
+text = "Didapat: 10000"
 align = 2
 valign = 1
 
@@ -210,7 +210,7 @@ margin_top = -152.0
 margin_right = -64.0
 margin_bottom = -113.0
 custom_fonts/font = SubResource( 3 )
-text = "Lives: 3"
+text = "Nyawa: 3"
 align = 1
 valign = 1
 

@@ -21,8 +21,8 @@ func _on_Word_pressed() -> void:
 
 func _on_Select_toggled(button_pressed: bool) -> void:
 	if(button_pressed):
-		$Select.text = "Yes";
+		$Select.text = "Ya";
 		self.identify_databse_res.add_selected_item(self.grapheme_item);
 	else:
-		$Select.text = "No";
+		$Select.text = "Tidak";
 		self.identify_databse_res.remove_selected_item(self.grapheme_item);

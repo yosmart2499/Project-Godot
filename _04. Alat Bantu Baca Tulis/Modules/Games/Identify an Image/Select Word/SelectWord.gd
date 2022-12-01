@@ -14,7 +14,7 @@ func _ready() -> void:
 		$WindowSize/ItemList.add_item(key);
 
 func change_display_chosen() -> void:
-	$ChosenWord.text = "Chosen Word: 4/" + String(self.identify_databse_res.selected_grapheme.size());
+	$ChosenWord.text = "Kata Terpilih: 4/" + String(self.identify_databse_res.selected_grapheme.size());
 	if(self.identify_databse_res.selected_grapheme.size() > 3):
 		$ChosenWord.modulate = Color.white;
 	else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=2]
@@ -8,11 +8,15 @@
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=5]
-size = 32
+[sub_resource type="DynamicFont" id=7]
+size = 24
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
 font_data = ExtResource( 1 )
 
 [node name="SelectWord" type="Control"]
@@ -54,7 +58,6 @@ margin_bottom = 384.0
 rect_min_size = Vector2( 192, 384 )
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 3 )
-items = [ "Alphabhet", null, false, "Verb", null, false, "Noun", null, false, "Conjuction", null, false, "Item 4", null, false, "Item 5", null, false, "Item 6", null, false, "Item 7", null, false, "Item 8", null, false, "Item 9", null, false, "Item 10", null, false, "Item 11", null, false, "Item 12", null, false, "Item 13", null, false, "Item 14", null, false, "Item 15", null, false, "Item 16", null, false, "Item 17", null, false ]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="WindowSize"]
 margin_left = 208.0
@@ -79,8 +82,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -432.0
 margin_top = -39.0
-custom_fonts/font = SubResource( 5 )
-text = "Chosen Word: 4/0"
+custom_fonts/font = SubResource( 7 )
+text = "Kata Terpilih: 4/0"
 align = 1
 valign = 1
 
@@ -92,15 +95,16 @@ margin_top = -48.0
 margin_right = 564.0
 margin_bottom = -28.0
 custom_fonts/font = SubResource( 6 )
-text = "Only Word That Has Image Are Being Displayed"
+text = "Hanya Kata Yang Terdapat Gambar Yang Ditampilkan"
 valign = 1
+autowrap = true
 
 [node name="Title" type="Label" parent="."]
 margin_top = 24.0
 margin_right = 810.0
 margin_bottom = 63.0
 custom_fonts/font = SubResource( 5 )
-text = "Select Word For Identify Game"
+text = "Pilih Kata Untuk Game"
 align = 1
 valign = 1
 

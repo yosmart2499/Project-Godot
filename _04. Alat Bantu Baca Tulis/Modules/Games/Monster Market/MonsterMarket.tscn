@@ -43,7 +43,7 @@ margin_right = 320.0
 margin_bottom = 58.0
 rect_min_size = Vector2( 640, 48 )
 custom_fonts/font = SubResource( 3 )
-text = "Pocket: 1000"
+text = "Kantong: 1000"
 align = 1
 valign = 1
 
@@ -70,18 +70,18 @@ custom_constants/separation = 700
 alignment = 1
 
 [node name="Previous" type="Button" parent="HBoxContainer"]
-margin_left = 42.0
+margin_left = 69.0
 margin_right = 162.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 1 )
-text = "Prev"
+text = "Pra"
 
 [node name="Next" type="Button" parent="HBoxContainer"]
 margin_left = 862.0
-margin_right = 982.0
+margin_right = 955.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 1 )
-text = "Next"
+text = "Per"
 
 [node name="MonsterContainer" type="Control" parent="."]
 anchor_left = 0.5
@@ -110,7 +110,7 @@ margin_top = -96.0
 margin_right = 207.0
 margin_bottom = -128.0
 custom_fonts/font = SubResource( 2 )
-text = "Buy The Monster"
+text = "Beli Monster"
 
 [connection signal="tree_exited" from="." to="." method="_on_MonsterMarket_tree_exited"]
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_Previous_pressed"]

@@ -31,7 +31,7 @@ func watch_over_lives_left() -> void:
 		UserAccess.set_screen(UserAccess.Scene.WINNING_SCREEN);
 		return;
 	else:
-		$LivesLeft.text = "Lives: " + String(self.lives);
+		$LivesLeft.text = "Nyawa: " + String(self.lives);
 
 func give_random_grapheme() -> void:
 	given_graphemes = self.identify_databse_res.give_four_rand_selected();
@@ -41,7 +41,7 @@ func give_random_grapheme() -> void:
 	self.given_answer.append(self.answer);
 
 func change_display() -> void:
-	$VBoxContainer/BerryCollected.text = "Collected: " + String(self.berry_collected);
+	$VBoxContainer/BerryCollected.text = "Didapat: " + String(self.berry_collected);
 	$VBoxContainer/BerryGet.text = "Berry: " + String(self.berry_get);
 	$HBoxContainer/VBoxContainer/WordLabel.text = self.answer.text;
 	$HBoxContainer/VBoxContainer/SpellingLabel.text = PoolStringArray(self.answer.spelling).join("-");
@@ -78,7 +78,7 @@ func reset_timer():
 	$SecondTimer.start();
 
 func _on_SecondTimer_timeout() -> void:
-	$VBoxContainer/TimerLabel.text = "Timer: " + String(int($GivenTimer.time_left));
+	$VBoxContainer/TimerLabel.text = "Sisa Waktu: " + String(int($GivenTimer.time_left));
 
 func _on_Answer1_pressed():
 	if(self.given_graphemes[0].text == self.answer.text):

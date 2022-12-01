@@ -1,11 +1,18 @@
 extends Control
 
+export var identify_databse_res: Resource = preload("res://Assets/Resources/identify_database.tres");
+
+const save_path_identify: String = "user://identify_database.tres";
+
 func _ready() -> void:
+	self.identify_databse_res = SaveLoading.load_from_resource_general(self.identify_databse_res, self.save_path_identify);
 	if(UserAccess.user_type == UserAccess.Category.STUDENT):
-		$UserLabel.text = "Student";
+		$UserLabel.text = "Siswa";
+		if(self.identify_databse_res.selected_grapheme.size() < 4):
+			$VBoxContainer/Identify.disabled = true;
 		$BuyMonster.show();
 	else:
-		$UserLabel.text = "Teacher";
+		$UserLabel.text = "Guru";
 
 func _on_Questionnaire_pressed() -> void:
 	if(UserAccess.user_type == UserAccess.Category.TEACHER):
@@ -19,6 +26,8 @@ func _on_BuyMonster_pressed() -> void:
 
 func _on_Identify_pressed():
 	if(UserAccess.user_type == UserAccess.Category.STUDENT):
+		if(self.identify_databse_res.selected_grapheme.size() < 4):
+			return;
 		UserAccess.set_screen(UserAccess.Scene.IDENTIFY_GAME);
 	if(UserAccess.user_type == UserAccess.Category.TEACHER):
 		UserAccess.set_screen(UserAccess.Scene.IDENTIFY_SELECT);

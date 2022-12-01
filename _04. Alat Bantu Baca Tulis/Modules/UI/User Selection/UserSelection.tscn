@@ -31,7 +31,7 @@ margin_bottom = 96.0
 rect_min_size = Vector2( 448, 96 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
-text = "Student"
+text = "Siswa"
 
 [node name="TeacherBtn" type="Button" parent="VBoxContainer"]
 margin_top = 192.0
@@ -40,7 +40,7 @@ margin_bottom = 288.0
 rect_min_size = Vector2( 448, 96 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
-text = "Teacher"
+text = "Guru"
 
 [connection signal="pressed" from="VBoxContainer/StudentBtn" to="." method="_on_StudentBtn_pressed"]
 [connection signal="pressed" from="VBoxContainer/TeacherBtn" to="." method="_on_TeacherBtn_pressed"]

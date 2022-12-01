@@ -3,10 +3,10 @@ extends Control
 func _ready():
 	if(UserAccess.user_type == UserAccess.Category.STUDENT):
 		$ChangeBtn.hide();
-		$UserLabel.text = "Student";
+		$UserLabel.text = "Siswa";
 	else:
 		$ChangeBtn.show();
-		$UserLabel.text = "Teacher";
+		$UserLabel.text = "Guru";
 	
 	if(UserAccess.ref_selected_item != null):
 		$HBoxContainer/VBoxContainer/WordLabel.text = UserAccess.ref_selected_item.text;

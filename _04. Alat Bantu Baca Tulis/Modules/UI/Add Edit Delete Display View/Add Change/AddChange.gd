@@ -5,9 +5,9 @@ onready var default_img: StreamTexture = preload("res://icon.png");
 onready var recording_effect: AudioEffectRecord = AudioServer.get_bus_effect(AudioServer.get_bus_index("Record"), 0);
 
 func _ready() -> void:
-	$UserLabel.text = "Teacher"
+	$UserLabel.text = "Guru"
 	if(UserAccess.mode_type == UserAccess.Mode.ADD):
-		$AddOrChange.text = "Add";
+		$AddOrChange.text = "Tambah";
 	else:
 		$HBoxContainer/VBoxContainer2/Word.text = UserAccess.ref_selected_item.text;
 		$HBoxContainer/VBoxContainer2/Type.text = UserAccess.ref_selected_item.type;
@@ -16,7 +16,7 @@ func _ready() -> void:
 			$HBoxContainer/VBoxContainer/Image.texture = UserAccess.ref_selected_item.text_image;
 		if(UserAccess.ref_selected_item.pronounce != null):
 			$HBoxContainer/VBoxContainer/HBoxContainer/StreamPlay.stream = UserAccess.ref_selected_item.pronounce;
-		$AddOrChange.text = "Change";
+		$AddOrChange.text = "Ganti";
 		$HBoxContainer/VBoxContainer3/WordDisplay.text = $HBoxContainer/VBoxContainer2/Word.text.capitalize();
 		$HBoxContainer/VBoxContainer3/SpellingDisplay.text = $HBoxContainer/VBoxContainer2/Spelling.text.capitalize().replace(" ", "");
 		$HBoxContainer/VBoxContainer3/TypeDisplay.text = $HBoxContainer/VBoxContainer2/Type.text.capitalize();
@@ -36,12 +36,12 @@ func _on_RecordBtn_pressed() -> void:
 	if(self.recording_effect.is_recording_active()):
 		$HBoxContainer/VBoxContainer/HBoxContainer/StreamPlay.stream = self.recording_effect.get_recording();
 		self.recording_effect.set_recording_active(false);
-		$HBoxContainer/VBoxContainer/HBoxContainer/RecordBtn.text = "Record";
+		$HBoxContainer/VBoxContainer/HBoxContainer/RecordBtn.text = "Rekam";
 		$HBoxContainer/VBoxContainer/HBoxContainer/PlayBtn.disabled = false;
 		$HBoxContainer/VBoxContainer/HBoxContainer/StreamPlay.stop();
 	else:
 		self.recording_effect.set_recording_active(true);
-		$HBoxContainer/VBoxContainer/HBoxContainer/RecordBtn.text = "Stop";
+		$HBoxContainer/VBoxContainer/HBoxContainer/RecordBtn.text = "Berhenti";
 		$HBoxContainer/VBoxContainer/HBoxContainer/PlayBtn.disabled = true;
 
 func _on_PlayBtn_pressed() -> void:
@@ -54,12 +54,12 @@ func _on_ConfrimBtn_pressed() -> void:
 	var spelling_text: String = $HBoxContainer/VBoxContainer2/Spelling.text.to_lower();
 	if(word_text.empty() || type_text.empty() || spelling_text.empty()):
 		if(word_text.empty()):
-			$WarningEmpty.window_title = "Empty Word!";
+			$WarningEmpty.window_title = "Kata Kosong!";
 		elif(spelling_text.empty()):
-			$WarningEmpty.window_title = "Empty Spelling!";
+			$WarningEmpty.window_title = "Ejaan Kosong!";
 		elif(type_text.empty()):
-			$WarningEmpty.window_title = "Empty Type!";
-		$WarningEmpty.dialog_text = "Please fill the form."
+			$WarningEmpty.window_title = "Tipe Kosong!";
+		$WarningEmpty.dialog_text = "Tolong diisi format-nya."
 		$WarningEmpty.popup_centered_ratio(0.3);
 		return;
 	var temp_item: GraphemeItem = GraphemeItem.new(word_text, type_text, spelling_text.split("-"));

@@ -21,9 +21,9 @@ func _ready() -> void:
 
 func change_display() -> void:
 	self.item_selected = self.predetermined_question[self.selected_index];
-	$BerryCollected.text = "Collected: " + String(self.berry_collected);
+	$BerryCollected.text = "Didapat: " + String(self.berry_collected);
 	$BerryGet.text = "Berry: " + String(self.item_selected.berry_weight);
-	$QuestionsLeft.text = "Questions: " + String(self.predetermined_question.size() - self.selected_index);
+	$QuestionsLeft.text = "Sisa Pertanyaan: " + String(self.predetermined_question.size() - self.selected_index);
 	$VBoxContainer/Question.text = self.item_selected.question;
 	$VBoxContainer/VBoxContainer2/CenterContainer/GridContainer/Answer.text = self.item_selected.answers[0];
 	$VBoxContainer/VBoxContainer2/CenterContainer/GridContainer/Answer2.text = self.item_selected.answers[1];

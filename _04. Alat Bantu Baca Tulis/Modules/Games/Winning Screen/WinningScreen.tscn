@@ -33,7 +33,7 @@ margin_top = -40.5
 margin_right = 512.0
 margin_bottom = 40.5
 custom_fonts/font = SubResource( 1 )
-text = "You've Collected
+text = "Selamat Kamu Mendapatkan
 99 Berry!"
 align = 1
 valign = 1

@@ -23,6 +23,9 @@ func _ready() -> void:
 
 func _on_UploadBtn_pressed() -> void:
 	$HBoxContainer/VBoxContainer/ImgUpload.add_filter("*.png");
+	$HBoxContainer/VBoxContainer/ImgUpload.add_filter("*.jpg");
+	$HBoxContainer/VBoxContainer/ImgUpload.add_filter("*.jpeg");
+	$HBoxContainer/VBoxContainer/ImgUpload.add_filter("*.gif");
 	$HBoxContainer/VBoxContainer/ImgUpload.popup_centered(self.screen_size / 2);
 
 func _on_ImgUpload_file_selected(path: String) -> void:

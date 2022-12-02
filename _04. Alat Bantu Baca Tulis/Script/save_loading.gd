@@ -13,9 +13,9 @@ Must use object or built-in type of Godot. For saving and loading something.
 var orthography_repo: Object = OrthographyRepository.new();
 
 func _ready() -> void:
-	self.load_from_path(self.orthography_repo, self.ortho_repo_save_path_res);
+	self.orthography_repo = self.load_from_path(self.orthography_repo, self.ortho_repo_save_path_res);
 	self.orthography_repo.show_repository();
-	self.load_from_path(self.orthography_repo, self.ortho_repo_save_path);
+	self.orthography_repo = self.load_from_path(self.orthography_repo, self.ortho_repo_save_path);
 	self.orthography_repo.show_repository();
 	UserAccess.load_repo();
 

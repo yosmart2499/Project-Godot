@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/Games/Questionnaire/Game Questionnaire/GameQuestionnaire.gd" type="Script" id=2]
@@ -8,6 +8,10 @@ size = 32
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 24
 font_data = ExtResource( 1 )
 
@@ -71,18 +75,19 @@ custom_constants/separation = 64
 alignment = 1
 
 [node name="Question" type="Label" parent="VBoxContainer"]
+margin_top = 5.0
 margin_right = 1024.0
-margin_bottom = 39.0
-custom_fonts/font = SubResource( 1 )
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 4 )
 text = "Pertanyaan?"
 align = 1
 valign = 1
 clip_text = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 103.0
+margin_top = 98.0
 margin_right = 1024.0
-margin_bottom = 295.0
+margin_bottom = 290.0
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/VBoxContainer2"]
 margin_right = 1024.0
@@ -138,6 +143,7 @@ clip_text = true
 
 [node name="QuestionTimer" type="Timer" parent="."]
 process_mode = 0
+wait_time = 10.0
 autostart = true
 
 [node name="SecondTimer" type="Timer" parent="."]

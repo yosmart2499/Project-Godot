@@ -4,4 +4,16 @@
 
 [resource]
 script = ExtResource( 1 )
-selected_grapheme = [  ]
+selected_grapheme = [ {
+"text": "ayam",
+"type": "hewan"
+}, {
+"text": "bebek",
+"type": "hewan"
+}, {
+"text": "mobil",
+"type": "transportasi"
+}, {
+"text": "pesisir",
+"type": "tempat"
+} ]

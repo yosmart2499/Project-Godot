@@ -4,4 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
-all_questions = [  ]
+all_questions = [ Object(Object,"script":Resource( "res://Script/questionnaire_item.gd" ),"question":"Ibukota negara Indonesia saat ini adalah?","answers":PoolStringArray( "Surabaya", "Jawa Tengah", "Jakarta", "Bandung" ),"right_answer":3,"berry_weight":100)
+, Object(Object,"script":Resource( "res://Script/questionnaire_item.gd" ),"question":"Pengemudi kendaraa pesawat adalah?","answers":PoolStringArray( "Nahkoda", "Pilot", "Masinis", "Tentara" ),"right_answer":2,"berry_weight":100)
+, Object(Object,"script":Resource( "res://Script/questionnaire_item.gd" ),"question":"Matahari terlihat diatas Kepala Kita pada?","answers":PoolStringArray( "siang hari", "Malam Hari", "Sore Hari", "Kemudian Hari" ),"right_answer":1,"berry_weight":100)
+, Object(Object,"script":Resource( "res://Script/questionnaire_item.gd" ),"question":"Matahari terbit dari sebelah?","answers":PoolStringArray( "Barat", "Selatan", "Samping", "Timur" ),"right_answer":4,"berry_weight":100)
+, Object(Object,"script":Resource( "res://Script/questionnaire_item.gd" ),"question":"Bahan bakar kereta api adalah?","answers":PoolStringArray( "Batu Akik", "Batu Bara", "Premium", "Listrik" ),"right_answer":2,"berry_weight":100)
+, Object(Object,"script":Resource( "res://Script/questionnaire_item.gd" ),"question":"Warna bendera Indonesia?","answers":PoolStringArray( "Merah Putih Biru", "Putih Merah", "Merah Putih", "Warna warni" ),"right_answer":3,"berry_weight":100)
+ ]

@@ -71,6 +71,8 @@ func _on_ConfrimBtn_pressed() -> void:
 		UserAccess.ref_ortho_repo.add_item(temp_item);
 	else:
 		UserAccess.ref_ortho_repo.change_item(temp_item, UserAccess.ref_selected_item);
+		UserAccess.set_screen(UserAccess.Scene.DISPLAY_GRAPHEME_LIST);
+		return;
 	$HBoxContainer/VBoxContainer3/WordDisplay.text = $HBoxContainer/VBoxContainer2/Word.text.capitalize();
 	$HBoxContainer/VBoxContainer3/SpellingDisplay.text = $HBoxContainer/VBoxContainer2/Spelling.text.capitalize().replace(" ", "");
 	$HBoxContainer/VBoxContainer3/TypeDisplay.text = $HBoxContainer/VBoxContainer2/Type.text.capitalize();

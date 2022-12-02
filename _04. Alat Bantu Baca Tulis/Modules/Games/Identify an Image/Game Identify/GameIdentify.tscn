@@ -1,19 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Modules/Games/Identify an Image/Game Identify/GameIdentify.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [node name="GameIdentify" type="Control"]
 anchor_right = 1.0
@@ -47,6 +48,7 @@ margin_bottom = 260.0
 margin_right = 256.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
+theme = ExtResource( 5 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
@@ -56,6 +58,7 @@ margin_top = 196.0
 margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 1 )
 text = "Jawaban 1"
 
@@ -68,6 +71,7 @@ margin_bottom = 260.0
 margin_right = 256.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
+theme = ExtResource( 5 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
@@ -77,6 +81,7 @@ margin_top = 196.0
 margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 1 )
 text = "Jawaban 2"
 
@@ -89,6 +94,7 @@ margin_bottom = 552.0
 margin_right = 256.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
+theme = ExtResource( 5 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
@@ -98,6 +104,7 @@ margin_top = 196.0
 margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 1 )
 text = "Jawaban 3"
 
@@ -111,6 +118,7 @@ margin_bottom = 552.0
 margin_right = 256.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
+theme = ExtResource( 5 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
@@ -120,6 +128,7 @@ margin_top = 196.0
 margin_right = 256.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 256, 64 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 1 )
 text = "Jawaban 4"
 
@@ -136,30 +145,33 @@ rect_min_size = Vector2( 416, 0 )
 alignment = 1
 
 [node name="WordLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 213.0
+margin_top = 218.0
 margin_right = 416.0
-margin_bottom = 252.0
+margin_bottom = 254.0
 rect_min_size = Vector2( 378, 0 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 text = "Kata"
 align = 1
 valign = 1
 
 [node name="SpellingLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 256.0
+margin_top = 258.0
 margin_right = 416.0
-margin_bottom = 295.0
+margin_bottom = 294.0
 rect_min_size = Vector2( 378, 0 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 text = "E-Ja-An"
 align = 1
 valign = 1
 
 [node name="TypeLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 299.0
+margin_top = 298.0
 margin_right = 416.0
-margin_bottom = 338.0
+margin_bottom = 334.0
 rect_min_size = Vector2( 378, 0 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 text = "Tipe"
 align = 1
@@ -173,28 +185,31 @@ custom_constants/separation = 8
 
 [node name="TimerLabel" type="Label" parent="VBoxContainer"]
 margin_right = 432.0
-margin_bottom = 39.0
+margin_bottom = 36.0
 rect_min_size = Vector2( 256, 32 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 3 )
 text = "Sisa Waktu: 5"
 align = 2
 valign = 1
 
 [node name="BerryCollected" type="Label" parent="VBoxContainer"]
-margin_top = 47.0
+margin_top = 44.0
 margin_right = 432.0
-margin_bottom = 86.0
+margin_bottom = 80.0
 rect_min_size = Vector2( 256, 32 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 3 )
 text = "Didapat: 10000"
 align = 2
 valign = 1
 
 [node name="BerryGet" type="Label" parent="VBoxContainer"]
-margin_top = 94.0
+margin_top = 88.0
 margin_right = 432.0
-margin_bottom = 133.0
+margin_bottom = 124.0
 rect_min_size = Vector2( 256, 32 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 3 )
 text = "Berry: 0"
 align = 2
@@ -209,6 +224,7 @@ margin_left = -384.0
 margin_top = -152.0
 margin_right = -64.0
 margin_bottom = -113.0
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 3 )
 text = "Nyawa: 3"
 align = 1

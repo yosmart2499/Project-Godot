@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Add Edit Delete.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 48
-font_data = ExtResource( 2 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
-font_data = ExtResource( 2 )
+font_data = ExtResource( 4 )
 
 [node name="Add Edit Delete" type="Control"]
 anchor_right = 1.0
@@ -37,27 +37,27 @@ custom_constants/separation = 96
 
 [node name="FirstBtn" type="Button" parent="VBoxContainer"]
 margin_right = 352.0
-margin_bottom = 96.0
+margin_bottom = 96.251
 rect_min_size = Vector2( 352, 96 )
-theme = ExtResource( 3 )
+theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "First"
 
 [node name="SecondBtn" type="Button" parent="VBoxContainer"]
 margin_top = 192.0
 margin_right = 352.0
-margin_bottom = 288.0
+margin_bottom = 288.251
 rect_min_size = Vector2( 352, 96 )
-theme = ExtResource( 3 )
+theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Second"
 
 [node name="ThirdBtn" type="Button" parent="VBoxContainer"]
 margin_top = 384.0
 margin_right = 352.0
-margin_bottom = 480.0
+margin_bottom = 480.251
 rect_min_size = Vector2( 352, 96 )
-theme = ExtResource( 3 )
+theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Third"
 

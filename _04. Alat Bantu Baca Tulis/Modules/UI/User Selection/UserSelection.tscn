@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/UI/User Selection/UserSelection.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -27,18 +27,18 @@ custom_constants/separation = 96
 
 [node name="StudentBtn" type="Button" parent="VBoxContainer"]
 margin_right = 448.0
-margin_bottom = 96.0
+margin_bottom = 96.251
 rect_min_size = Vector2( 448, 96 )
-theme = ExtResource( 3 )
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 1 )
 text = "Siswa"
 
 [node name="TeacherBtn" type="Button" parent="VBoxContainer"]
 margin_top = 192.0
 margin_right = 448.0
-margin_bottom = 288.0
+margin_bottom = 288.251
 rect_min_size = Vector2( 448, 96 )
-theme = ExtResource( 3 )
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 1 )
 text = "Guru"
 

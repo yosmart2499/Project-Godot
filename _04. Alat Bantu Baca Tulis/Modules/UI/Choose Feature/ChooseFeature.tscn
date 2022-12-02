@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/UI/Choose Feature/ChooseFeature.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 48
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [node name="ChooseFeature" type="Control"]
 anchor_right = 1.0
@@ -37,7 +37,7 @@ custom_constants/separation = 96
 
 [node name="FirstBtn" type="Button" parent="VBoxContainer"]
 margin_right = 595.0
-margin_bottom = 96.0
+margin_bottom = 96.251
 rect_min_size = Vector2( 448, 96 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
@@ -46,7 +46,7 @@ text = "First"
 [node name="SecondBtn" type="Button" parent="VBoxContainer"]
 margin_top = 192.0
 margin_right = 595.0
-margin_bottom = 288.0
+margin_bottom = 288.251
 rect_min_size = Vector2( 448, 96 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )

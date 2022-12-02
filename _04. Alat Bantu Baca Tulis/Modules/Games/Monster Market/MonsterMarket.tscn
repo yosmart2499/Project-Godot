@@ -1,36 +1,39 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/Games/Monster Market/All Type Of Monster/Monster1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Modules/Games/Monster Market/MonsterMarket.gd" type="Script" id=3]
 [ext_resource path="res://Modules/Games/Monster Market/All Type Of Monster/Monster2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Modules/Games/Monster Market/All Type Of Monster/Monster3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Modules/Games/Monster Market/All Type Of Monster/Monster4.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=7]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=4]
 size = 48
-font_data = ExtResource( 1 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 48
-font_data = ExtResource( 1 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 8 )
 
 [node name="MonsterMarket" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 7 )
 script = ExtResource( 3 )
 
 [node name="UserLabel" type="Label" parent="."]
 margin_right = 160.0
 margin_bottom = 58.0
+theme = ExtResource( 7 )
 custom_fonts/font = SubResource( 4 )
 text = "User"
 
@@ -42,6 +45,7 @@ margin_top = 16.0
 margin_right = 320.0
 margin_bottom = 58.0
 rect_min_size = Vector2( 640, 48 )
+theme = ExtResource( 7 )
 custom_fonts/font = SubResource( 3 )
 text = "Kantong: 1000"
 align = 1
@@ -55,6 +59,7 @@ margin_top = 80.0
 margin_right = 320.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 640, 48 )
+theme = ExtResource( 7 )
 custom_fonts/font = SubResource( 3 )
 text = "10 Berry"
 align = 1
@@ -66,20 +71,23 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -22.5
 margin_bottom = 22.5
+theme = ExtResource( 7 )
 custom_constants/separation = 700
 alignment = 1
 
 [node name="Previous" type="Button" parent="HBoxContainer"]
-margin_left = 69.0
-margin_right = 162.0
-margin_bottom = 45.0
+margin_left = 60.0
+margin_right = 162.324
+margin_bottom = 60.251
+theme = ExtResource( 7 )
 custom_fonts/font = SubResource( 1 )
 text = "Pra"
 
 [node name="Next" type="Button" parent="HBoxContainer"]
 margin_left = 862.0
-margin_right = 955.0
-margin_bottom = 45.0
+margin_right = 964.324
+margin_bottom = 60.251
+theme = ExtResource( 7 )
 custom_fonts/font = SubResource( 1 )
 text = "Per"
 
@@ -88,6 +96,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+theme = ExtResource( 7 )
 
 [node name="Monster1" parent="MonsterContainer" instance=ExtResource( 2 )]
 
@@ -109,6 +118,7 @@ margin_left = -207.0
 margin_top = -96.0
 margin_right = 207.0
 margin_bottom = -128.0
+theme = ExtResource( 7 )
 custom_fonts/font = SubResource( 2 )
 text = "Beli Monster"
 

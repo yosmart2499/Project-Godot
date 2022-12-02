@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/Games/Winning Screen/WinningScreen.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=2]
 size = 48
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
 [node name="WinningLabel" type="Control"]
 anchor_right = 1.0

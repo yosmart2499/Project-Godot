@@ -1,23 +1,23 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Add Change/AddChange.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="AudioStreamMicrophone" id=3]
 
 [sub_resource type="DynamicFont" id=4]
 size = 24
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [node name="AddChange" type="Control"]
 anchor_right = 1.0
@@ -27,6 +27,7 @@ script = ExtResource( 3 )
 [node name="UserLabel" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 1 )
 text = "User"
 
@@ -36,6 +37,7 @@ anchor_right = 0.5
 margin_left = -198.0
 margin_right = 198.0
 margin_bottom = 58.0
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 1 )
 text = "Add/Change"
 align = 1
@@ -43,6 +45,7 @@ align = 1
 [node name="WarningEmpty" type="AcceptDialog" parent="."]
 margin_right = 48.0
 margin_bottom = 40.0
+theme = ExtResource( 5 )
 resizable = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -51,25 +54,26 @@ anchor_bottom = 1.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 4.0
-margin_right = 310.0
+margin_left = 23.0
+margin_right = 347.0
 margin_bottom = 600.0
 alignment = 1
 
 [node name="Image" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
-margin_top = 108.0
-margin_right = 306.0
-margin_bottom = 406.0
+margin_top = 87.0
+margin_right = 324.0
+margin_bottom = 385.0
 rect_min_size = Vector2( 298, 298 )
+theme = ExtResource( 5 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
 
 [node name="UploadBtn" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 410.0
-margin_right = 306.0
-margin_bottom = 449.0
-theme = ExtResource( 4 )
+margin_top = 389.0
+margin_right = 324.0
+margin_bottom = 449.251
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 text = "Unggah"
 
@@ -89,23 +93,23 @@ access = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 453.0
-margin_right = 306.0
-margin_bottom = 492.0
+margin_right = 324.0
+margin_bottom = 513.0
 
 [node name="RecordBtn" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 162.0
-margin_bottom = 39.0
+margin_right = 164.324
+margin_bottom = 60.251
 rect_min_size = Vector2( 162, 0 )
-theme = ExtResource( 4 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 text = "Rekam"
 
 [node name="PlayBtn" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 166.0
-margin_right = 306.0
-margin_bottom = 39.0
+margin_left = 168.0
+margin_right = 324.324
+margin_bottom = 60.251
 rect_min_size = Vector2( 140, 0 )
-theme = ExtResource( 4 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 text = "Putar"
 
@@ -117,60 +121,61 @@ autoplay = true
 bus = "Record"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 314.0
-margin_right = 638.0
+margin_left = 351.0
+margin_right = 618.0
 margin_bottom = 600.0
 alignment = 1
 
 [node name="Word" type="LineEdit" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 216.0
-margin_right = 324.0
-margin_bottom = 255.0
-theme = ExtResource( 4 )
+margin_top = 178.0
+margin_right = 267.0
+margin_bottom = 235.434
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 align = 1
 placeholder_text = "Isi Kata"
 caret_blink = true
 
 [node name="Spelling" type="LineEdit" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 259.0
-margin_right = 324.0
-margin_bottom = 298.0
-theme = ExtResource( 4 )
+margin_top = 239.0
+margin_right = 267.0
+margin_bottom = 296.434
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 align = 1
 placeholder_text = "Isi ejaan"
 caret_blink = true
 
 [node name="Type" type="LineEdit" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 302.0
-margin_right = 324.0
-margin_bottom = 341.0
-theme = ExtResource( 4 )
+margin_top = 300.0
+margin_right = 267.0
+margin_bottom = 357.434
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 align = 1
 placeholder_text = "Isi Tipe"
 caret_blink = true
 
 [node name="ConfrimBtn" type="Button" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 345.0
-margin_right = 324.0
-margin_bottom = 384.0
-theme = ExtResource( 4 )
+margin_top = 361.0
+margin_right = 267.324
+margin_bottom = 421.251
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 text = "Konfirmasi"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 642.0
-margin_right = 1020.0
+margin_left = 622.0
+margin_right = 1000.0
 margin_bottom = 600.0
 alignment = 1
 
 [node name="TitleLabel" type="Label" parent="HBoxContainer/VBoxContainer3"]
-margin_top = 221.0
+margin_top = 226.0
 margin_right = 378.0
-margin_bottom = 250.0
+margin_bottom = 253.0
 rect_min_size = Vector2( 378, 0 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 4 )
 text = "Tampilan Konfirmasi"
 align = 1
@@ -178,12 +183,13 @@ valign = 1
 clip_text = true
 
 [node name="WordDisplay" type="Label" parent="HBoxContainer/VBoxContainer3"]
-margin_top = 254.0
+margin_top = 257.0
 margin_right = 378.0
 margin_bottom = 293.0
 rect_min_size = Vector2( 378, 0 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
-text = "Tampilan  Kata"
+text = "Tampilan      Kata"
 align = 1
 valign = 1
 clip_text = true
@@ -191,21 +197,23 @@ clip_text = true
 [node name="SpellingDisplay" type="Label" parent="HBoxContainer/VBoxContainer3"]
 margin_top = 297.0
 margin_right = 378.0
-margin_bottom = 336.0
+margin_bottom = 333.0
 rect_min_size = Vector2( 378, 0 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
-text = "Tampilan Ejaan"
+text = "Tampilan   Ejaan"
 align = 1
 valign = 1
 clip_text = true
 
 [node name="TypeDisplay" type="Label" parent="HBoxContainer/VBoxContainer3"]
-margin_top = 340.0
+margin_top = 337.0
 margin_right = 378.0
-margin_bottom = 379.0
+margin_bottom = 373.0
 rect_min_size = Vector2( 378, 0 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
-text = "Tampilan  Tipe"
+text = "Tampilan        Tipe"
 align = 1
 valign = 1
 clip_text = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/Games/Questionnaire/Game Questionnaire/GameQuestionnaire.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -21,6 +22,7 @@ font_data = ExtResource( 1 )
 [node name="GameQuestion" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="TimerLabel" type="Label" parent="."]
@@ -30,6 +32,7 @@ margin_left = -27.0
 margin_top = 16.0
 margin_right = 27.0
 margin_bottom = 39.0
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
 text = "10"
 align = 1
@@ -40,6 +43,7 @@ margin_left = 16.0
 margin_top = 16.0
 margin_right = 54.0
 margin_bottom = 39.0
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
 text = "Didapat: 0"
 valign = 1
@@ -49,6 +53,7 @@ margin_left = 16.0
 margin_top = 72.0
 margin_right = 259.0
 margin_bottom = 111.0
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
 text = "Berry: 0"
 valign = 1
@@ -60,6 +65,7 @@ margin_left = -370.0
 margin_top = 16.0
 margin_right = -16.0
 margin_bottom = 39.0
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 3 )
 text = "Sisa Pertanyaan: 5"
 valign = 1
@@ -71,13 +77,15 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -147.5
 margin_bottom = 147.5
+theme = ExtResource( 3 )
 custom_constants/separation = 64
 alignment = 1
 
 [node name="Question" type="Label" parent="VBoxContainer"]
-margin_top = 5.0
+margin_top = 6.0
 margin_right = 1024.0
-margin_bottom = 34.0
+margin_bottom = 33.0
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 4 )
 text = "Pertanyaan?"
 align = 1
@@ -85,18 +93,21 @@ valign = 1
 clip_text = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 98.0
+margin_top = 97.0
 margin_right = 1024.0
-margin_bottom = 290.0
+margin_bottom = 289.0
+theme = ExtResource( 3 )
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/VBoxContainer2"]
 margin_right = 1024.0
 margin_bottom = 192.0
+theme = ExtResource( 3 )
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/VBoxContainer2/CenterContainer"]
 margin_left = 80.0
 margin_right = 944.0
 margin_bottom = 192.0
+theme = ExtResource( 3 )
 custom_constants/vseparation = 64
 custom_constants/hseparation = 64
 columns = 2
@@ -105,6 +116,7 @@ columns = 2
 margin_right = 400.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 400, 64 )
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "Jawaban 1"
@@ -115,6 +127,7 @@ margin_left = 464.0
 margin_right = 864.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 400, 64 )
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "Jawaban 2"
@@ -125,6 +138,7 @@ margin_top = 128.0
 margin_right = 400.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 400, 64 )
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "Jawaban 3"
@@ -136,6 +150,7 @@ margin_top = 128.0
 margin_right = 864.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 400, 64 )
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "Jawaban 4"

@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/UI/Step Back/BackBtn.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Resources/screen_navigator.tres" type="Resource" id=3]
-[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32

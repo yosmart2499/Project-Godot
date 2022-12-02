@@ -1,20 +1,20 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Created Themes/General/Adventure_bg.png" type="Texture" id=3]
 [ext_resource path="res://Modules/UI/Add Edit Delete Display View/Delete or Display/DisplayList.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [node name="DisplayList" type="Control"]
 anchor_right = 1.0
@@ -25,6 +25,7 @@ script = ExtResource( 4 )
 [node name="UserLabel" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 1 )
 text = "User"
 
@@ -33,13 +34,14 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -45.0
 margin_right = 320.0
-theme = ExtResource( 2 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
 text = "Hapus"
 
 [node name="DeleteConfirmation" type="ConfirmationDialog" parent="."]
 margin_right = 200.0
 margin_bottom = 70.0
+theme = ExtResource( 5 )
 window_title = "Mohon Untuk Konfirmasi Penghapusan"
 resizable = true
 dialog_text = "Kamu akan menghapus salah satu atau beberapa item ejaan. Apa benar itu yang kamu mau?"
@@ -61,6 +63,7 @@ margin_left = -16.0
 margin_top = -16.0
 margin_right = 64.0
 margin_bottom = 16.0
+theme = ExtResource( 5 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 1
@@ -69,7 +72,7 @@ stretch_mode = 1
 margin_right = 192.0
 margin_bottom = 384.0
 rect_min_size = Vector2( 192, 384 )
-theme = ExtResource( 2 )
+theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 3 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="WindowSize"]
@@ -77,12 +80,13 @@ margin_left = 208.0
 margin_right = 942.0
 margin_bottom = 384.0
 rect_min_size = Vector2( 734, 384 )
-theme = ExtResource( 2 )
+theme = ExtResource( 5 )
 
 [node name="GridContainer" type="GridContainer" parent="WindowSize/ScrollContainer"]
 margin_right = 704.0
 margin_bottom = 384.0
 rect_min_size = Vector2( 704, 384 )
+theme = ExtResource( 5 )
 custom_constants/vseparation = 64
 custom_constants/hseparation = 64
 columns = 3

@@ -1,32 +1,34 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix monospace.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/Created Themes/school_blackboard_style.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Created Themes/General/Adventure_bg.png" type="Texture" id=3]
 [ext_resource path="res://Modules/Games/Identify an Image/Select Word/SelectWord.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 24
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [node name="SelectWord" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 script = ExtResource( 4 )
 
 [node name="SelectConfirmation" type="ConfirmationDialog" parent="."]
 margin_right = 203.0
 margin_bottom = 92.0
+theme = ExtResource( 2 )
 window_title = "Please Confirm Deletion"
 resizable = true
 dialog_text = "You are about to delete grapheme item. Are you sure you want to do it?"
@@ -40,6 +42,7 @@ margin_left = 40.0
 margin_top = 112.0
 margin_right = -88.0
 margin_bottom = -80.0
+theme = ExtResource( 2 )
 
 [node name="Background" type="TextureRect" parent="WindowSize"]
 anchor_right = 1.0
@@ -48,6 +51,7 @@ margin_left = -16.0
 margin_top = -16.0
 margin_right = 64.0
 margin_bottom = 16.0
+theme = ExtResource( 2 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 1
@@ -71,6 +75,7 @@ margin_right = 704.0
 margin_bottom = 384.0
 rect_min_size = Vector2( 704, 384 )
 rect_pivot_offset = Vector2( -304, 24 )
+theme = ExtResource( 2 )
 custom_constants/vseparation = 64
 custom_constants/hseparation = 64
 columns = 3
@@ -82,6 +87,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -432.0
 margin_top = -39.0
+theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 7 )
 text = "Kata Terpilih: 4/0"
 align = 1
@@ -94,6 +100,7 @@ margin_left = 8.0
 margin_top = -48.0
 margin_right = 564.0
 margin_bottom = -28.0
+theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 6 )
 text = "Hanya Kata Yang Terdapat Gambar Yang Ditampilkan"
 valign = 1
@@ -103,6 +110,7 @@ autowrap = true
 margin_top = 24.0
 margin_right = 810.0
 margin_bottom = 63.0
+theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 5 )
 text = "Pilih Kata Untuk Game"
 align = 1

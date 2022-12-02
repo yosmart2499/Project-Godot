@@ -11,7 +11,10 @@ var user_type: int = -1;
 var screen_type: int = -1;
 var mode_type: int = -1;
 
-var ref_ortho_repo: OrthographyRepository;
+"""
+Must use object or built-in type of Godot. For saving and loading something.
+"""
+var ref_ortho_repo: Object;
 var ref_selected_item: Object;
 
 signal user_selected();

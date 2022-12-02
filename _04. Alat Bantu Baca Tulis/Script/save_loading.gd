@@ -5,11 +5,19 @@ Always use export in the var to save something.
 """
 const ortho_repo_save_path: String = "user://orthography_repository.save";
 const questionnaire_save_path: String = "user://questionnaire_database.tres";
+const ortho_repo_save_path_res: String = "res://Assets/Resources/orthography_repository.save";
 
-var orthography_repo: OrthographyRepository = OrthographyRepository.new();
+"""
+Must use object or built-in type of Godot. For saving and loading something.
+"""
+var orthography_repo: Object = OrthographyRepository.new();
 
 func _ready() -> void:
-	self.load_from_file();
+	self.load_from_path(self.orthography_repo, self.ortho_repo_save_path_res);
+	self.orthography_repo.show_repository();
+	self.load_from_path(self.orthography_repo, self.ortho_repo_save_path);
+	self.orthography_repo.show_repository();
+	UserAccess.load_repo();
 
 func save_to_path(variable, save_path: String) -> void:
 	var temp_file: File = File.new();
@@ -55,7 +63,6 @@ func load_from_file() -> void:
 		temp_file.open(self.ortho_repo_save_path, File.READ)
 		self.orthography_repo.repository_dict = temp_file.get_var(true).repository_dict;
 		temp_file.close();
-	UserAccess.load_repo();
 
 """
 Saving using store_var and get_var must be aware of the type of the things that being saved.

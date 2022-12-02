@@ -37,6 +37,7 @@ func show_repository() -> void:
 	print(self.repository_dict);
 	for key in self.repository_dict.keys():
 		for item in self.repository_dict[key]:
+			counter += 1;
 			print(String(counter) + " - " + key + " - " + item.text + " - " + String(item.spelling));
 
 func show_list_item(type: String = "") -> Array:

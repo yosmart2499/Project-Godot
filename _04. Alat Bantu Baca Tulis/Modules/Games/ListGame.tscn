@@ -46,7 +46,7 @@ margin_bottom = 96.251
 rect_min_size = Vector2( 768, 96 )
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
-text = "Questionnaire"
+text = "Tanya Jawab"
 
 [node name="Identify" type="Button" parent="VBoxContainer"]
 margin_top = 128.0

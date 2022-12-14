@@ -29,8 +29,8 @@ func delete_item(text: String, type: String) -> void:
 	if(temp_item != null):
 		self.repository_dict[type].erase(temp_item);
 		temp_item.free();
-	if(self.repository_dict[type].empty()):
-		print(self.repository_dict.erase(type));
+#	if(self.repository_dict[type].empty()):
+#		print(self.repository_dict.erase(type));
 
 func show_repository() -> void:
 	var counter: = 0;

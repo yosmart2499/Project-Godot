@@ -4,9 +4,9 @@ extends Node
 Always use export in the var to save something.
 """
 const ortho_repo_save_path: String = "user://orthography_repository.save";
-const questionnaire_save_path: String = "user://questionnaire_database.tres";
 const ortho_repo_save_path_res: String = "res://Assets/Resources/orthography_repository.save";
 
+const questionnaire_save_path: String = "user://questionnaire_database.tres";
 """
 Must use object or built-in type of Godot. For saving and loading something.
 """

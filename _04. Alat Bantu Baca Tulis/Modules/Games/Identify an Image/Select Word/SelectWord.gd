@@ -1,4 +1,8 @@
 extends Control
+"""
+If there are grapheme that changed. It will return error,
+because this code not yet build to handle that
+"""
 
 export var item_container_scene: PackedScene = preload("res://Modules/Games/Identify an Image/Select Word/ItemContainer.tscn");
 export var identify_databse_res: Resource = preload("res://Assets/Resources/identify_database.tres");

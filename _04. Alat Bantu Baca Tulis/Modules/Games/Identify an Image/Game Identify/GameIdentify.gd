@@ -1,4 +1,9 @@
 extends Control
+"""
+If there are grapheme that changed. It will return error,
+because this code not yet build to handle that
+"""
+
 
 export var identify_databse_res: Resource = preload("res://Assets/Resources/identify_database.tres");
 export var student_att_resource: Resource = preload("res://Assets/Resources/student_attributes.tres");

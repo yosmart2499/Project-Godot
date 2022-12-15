@@ -55,7 +55,7 @@ margin_bottom = 224.251
 rect_min_size = Vector2( 768, 96 )
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
-text = "Identifikasi"
+text = "Tebak Gambar"
 
 [node name="BuyMonster" type="Button" parent="."]
 visible = false

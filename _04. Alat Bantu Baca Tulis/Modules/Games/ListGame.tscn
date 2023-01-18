@@ -1,15 +1,29 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=2]
 [ext_resource path="res://Modules/Games/ListGame.gd" type="Script" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.658824, 0.309804, 0.815686, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[sub_resource type="DynamicFont" id=4]
 size = 48
+outline_size = 2
+outline_color = Color( 0.270588, 0.270588, 0.270588, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=1]
-size = 64
+size = 42
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -21,11 +35,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 
+[node name="Background" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -275.0
+margin_top = -175.0
+margin_right = 275.0
+margin_bottom = 175.0
+custom_styles/panel = SubResource( 5 )
+
 [node name="UserLabel" type="Label" parent="."]
-margin_right = 160.0
-margin_bottom = 58.0
-theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 2 )
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 175.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 4 )
 text = "User"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -33,29 +59,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -384.0
-margin_top = -112.0
-margin_right = 384.0
-margin_bottom = 112.0
+margin_left = -224.0
+margin_top = -128.0
+margin_right = 224.0
+margin_bottom = 128.0
 rect_pivot_offset = Vector2( -514, -204 )
-custom_constants/separation = 32
+custom_constants/separation = 64
 
 [node name="Questionnaire" type="Button" parent="VBoxContainer"]
-margin_right = 768.0
-margin_bottom = 96.251
-rect_min_size = Vector2( 768, 96 )
+margin_right = 448.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 448, 96 )
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Tanya Jawab"
+clip_text = true
 
 [node name="Identify" type="Button" parent="VBoxContainer"]
-margin_top = 128.0
-margin_right = 768.0
-margin_bottom = 224.251
-rect_min_size = Vector2( 768, 96 )
+margin_top = 160.0
+margin_right = 448.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 448, 96 )
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Tebak Gambar"
+clip_text = true
 
 [node name="BuyMonster" type="Button" parent="."]
 visible = false

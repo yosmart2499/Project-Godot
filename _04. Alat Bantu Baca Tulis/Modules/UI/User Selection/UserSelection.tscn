@@ -1,8 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/UI/User Selection/UserSelection.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=4]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.658824, 0.309804, 0.815686, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -14,16 +26,27 @@ anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( 2 )
 
+[node name="Background" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -275.0
+margin_top = -175.0
+margin_right = 275.0
+margin_bottom = 175.0
+custom_styles/panel = SubResource( 2 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -224.0
-margin_top = -144.0
+margin_top = -128.0
 margin_right = 224.0
-margin_bottom = 144.0
-custom_constants/separation = 96
+margin_bottom = 128.0
+custom_constants/separation = 64
 
 [node name="StudentBtn" type="Button" parent="VBoxContainer"]
 margin_right = 448.0
@@ -34,9 +57,9 @@ custom_fonts/font = SubResource( 1 )
 text = "Siswa"
 
 [node name="TeacherBtn" type="Button" parent="VBoxContainer"]
-margin_top = 192.0
+margin_top = 160.0
 margin_right = 448.0
-margin_bottom = 288.251
+margin_bottom = 256.251
 rect_min_size = Vector2( 448, 96 )
 theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 1 )

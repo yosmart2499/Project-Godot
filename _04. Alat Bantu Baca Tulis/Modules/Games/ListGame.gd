@@ -4,7 +4,7 @@ export var identify_databse_res: Resource = preload("res://Assets/Resources/iden
 export var questionnaire_resource: Resource = preload("res://Assets/Resources/questionnaire_database.tres");
 
 const save_path_identify: String = "user://identify_database.tres";
-const save_path_questionnaire: String = "user://questionnaire_database.tress";
+const save_path_questionnaire: String = "user://questionnaire_database.tres";
 
 func _ready() -> void:
 	self.identify_databse_res = SaveLoading.load_from_resource_general(self.identify_databse_res, self.save_path_identify);
@@ -13,9 +13,11 @@ func _ready() -> void:
 		$UserLabel.text = "Siswa";
 		if(self.identify_databse_res.selected_grapheme.size() < 4):
 			$VBoxContainer/Identify.disabled = true;
-		print(self.questionnaire_resource.all_questions);
 		if(self.questionnaire_resource.all_questions.size() < 4):
 			$VBoxContainer/Questionnaire.disabled = true;
+			print("***");
+			print(self.questionnaire_resource.all_questions);
+			print("***");
 		$BuyMonster.show();
 	else:
 		$UserLabel.text = "Guru";

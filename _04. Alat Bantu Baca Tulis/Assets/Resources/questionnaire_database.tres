@@ -4,4 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-all_questions = [  ]
+all_questions = [ Object(Object,"script":Resource( "res://Script/questionnaire_item.gd" ),"question":"Ibukota negara Indonesia saat ini?","answers":PoolStringArray( "Jakarta", "Bandung", "Bandung", "Bandung" ),"right_answer":1,"berry_weight":100)
+, Object(Object,"script":Resource( "res://Script/questionnaire_item.gd" ),"question":"Pengemudi kendaraa pesawat adalah","answers":PoolStringArray( "MAsinins", "Pilot", "Nahkoda", "NahKoda" ),"right_answer":2,"berry_weight":100)
+, Object(Object,"script":Resource( "res://Script/questionnaire_item.gd" ),"question":"Matahari terlihat pada?","answers":PoolStringArray( "Malam Hari", "Subuh Hari", "Siang Hari", "Tidak Ada Jawaban Benar" ),"right_answer":3,"berry_weight":100)
+, Object(Object,"script":Resource( "res://Script/questionnaire_item.gd" ),"question":"Matahari Terbit dari sebelah?","answers":PoolStringArray( "Barat", "Selatan", "Utara", "Timur" ),"right_answer":4,"berry_weight":100)
+ ]

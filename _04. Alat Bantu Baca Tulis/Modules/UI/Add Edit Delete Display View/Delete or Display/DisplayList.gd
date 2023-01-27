@@ -7,7 +7,7 @@ var toggle_mode: bool = false;
 func _ready() -> void:
 	$WindowSize/ItemList.clear();
 	for key in UserAccess.ref_ortho_repo.show_list_item():
-		$WindowSize/ItemList.add_item(key);
+		$WindowSize/ItemList.add_item(key.capitalize());
 	if(UserAccess.user_type == UserAccess.Category.TEACHER):
 		$UserLabel.text = "Guru";
 		self.toggle_mode = true;
@@ -23,7 +23,7 @@ func _ready() -> void:
 func _on_ItemList_item_selected(index: int) -> void:
 	for child in $WindowSize/ScrollContainer/GridContainer.get_children():
 		child.queue_free();
-	for grapheme in UserAccess.ref_ortho_repo.show_list_item($WindowSize/ItemList.get_item_text(index)):
+	for grapheme in UserAccess.ref_ortho_repo.show_list_item($WindowSize/ItemList.get_item_text(index).to_lower()):
 		var item_instance: Button = item_scene.instance();
 		item_instance.set_attributes(grapheme, toggle_mode);
 		$WindowSize/ScrollContainer/GridContainer.add_child(item_instance);

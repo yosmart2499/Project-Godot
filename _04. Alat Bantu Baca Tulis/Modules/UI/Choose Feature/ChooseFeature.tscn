@@ -1,16 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://Assets/Fonts/Times-New-Roman/times new roman bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Modules/UI/Choose Feature/ChooseFeature.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Other Themes/FlatUI/kenneyUI-green.tres" type="Theme" id=3]
-[ext_resource path="res://Assets/Other Themes/FlatUI/kenvector_future.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=9]
 size = 48
-outline_size = 2
-outline_color = Color( 0.270588, 0.270588, 0.270588, 1 )
-font_data = ExtResource( 4 )
+font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.658824, 0.309804, 0.815686, 1 )
 border_width_left = 10
 border_width_top = 10
@@ -21,10 +19,6 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 5
-
-[sub_resource type="DynamicFont" id=1]
-size = 48
-font_data = ExtResource( 4 )
 
 [node name="ChooseFeature" type="Control"]
 anchor_right = 1.0
@@ -37,7 +31,7 @@ margin_left = 15.0
 margin_top = 5.0
 margin_right = 175.0
 margin_bottom = 59.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 text = "User"
 
 [node name="Background" type="Panel" parent="."]
@@ -49,7 +43,7 @@ margin_left = -275.0
 margin_top = -175.0
 margin_right = 275.0
 margin_bottom = 175.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -67,7 +61,8 @@ margin_right = 448.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 448, 96 )
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
 text = "First"
 clip_text = true
 
@@ -77,7 +72,8 @@ margin_right = 448.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 448, 96 )
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
 text = "Second"
 clip_text = true
 

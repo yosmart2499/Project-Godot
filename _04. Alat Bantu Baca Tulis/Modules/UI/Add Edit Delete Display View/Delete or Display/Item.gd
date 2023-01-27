@@ -3,7 +3,7 @@ extends Button
 var item_obj: Object;
 
 func set_attributes(grapheme: Object, mode: bool):
-	self.text = grapheme.text;
+	self.text = grapheme.text.capitalize();
 	self.toggle_mode = mode;
 	self.item_obj = grapheme;
 
